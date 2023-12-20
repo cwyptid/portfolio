@@ -760,21 +760,21 @@ h2 > a:hover {
 .project-img {
 	width: 100%;
 	height: 80%;
-	background-color: #ef6c45;
+	background-color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 6px;
 }
 .project-img-card {
-	width: 80%;
-	height: 50%;
-	padding: 10px;
+	width: 100%;
+	height: 100%;
+	padding: 0;
 	background-color: #fff;
 	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	object-fit: cover;
 	overflow: hidden;
 	transition: 0.4s ease;
 
@@ -785,12 +785,8 @@ h2 > a:hover {
 	}
 }
 
-.project:hover .project-img-card {
-	transform: translateY(-5px);
-}
-
 .project:hover .project-img-card img {
-	transform: scale(1.02);
+	transform: scale(1.05);
 }
 
 /* Project Styles */
