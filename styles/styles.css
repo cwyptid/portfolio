@@ -403,6 +403,10 @@ p {
 	}
 }
 
+#project {
+	text-align: center;
+}
+
 footer {
 	margin: 5em;
 }
@@ -418,7 +422,8 @@ footer {
 	color: #000;
 }
 
-h2 {
+h2,
+.projh1 {
 	font-size: 2.5em;
 	color: #242424;
 	line-height: 1.2;
@@ -426,6 +431,11 @@ h2 {
 	border-top: 2px solid #ef6c45;
 	border-bottom: 2px solid #ef6c45;
 	margin: 2em;
+}
+
+.projp {
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 .bold {
@@ -472,13 +482,15 @@ h2 > a:hover {
 
 /* Project Styles */
 
-#project {
-	text-align: center;
+.projh1 {
+	margin-bottom: 0.5em;
 }
 
 .back-link {
+	font-size: 1.5em;
 	text-align: center;
-	margin-top: -3em;
+	margin: 0;
+	padding: 0;
 }
 
 .back-link a {
@@ -540,7 +552,8 @@ h2 > a:hover {
 		text-align: left;
 	}
 
-	h2 {
+	h2,
+	.projh1 {
 		font-size: 2.7em;
 	}
 
@@ -584,7 +597,8 @@ h2 > a:hover {
 		}
 
 		main#project-main {
-			display: block;
+			grid-template-columns: 3fr 4fr;
+			padding-top: 0;
 		}
 
 		.p-wrapper {
@@ -593,7 +607,8 @@ h2 > a:hover {
 			padding: 0;
 		}
 
-		h2 {
+		h2,
+		.projh1 {
 			font-size: 2.8em;
 		}
 
@@ -637,7 +652,8 @@ h2 > a:hover {
 		font-size: 4em;
 	}
 
-	h2 {
+	h2,
+	.projh1 {
 		font-size: 3.8em;
 	}
 
@@ -670,10 +686,12 @@ h2 > a:hover {
 		font-size: 5em;
 	}
 
+	.projp {
+		font-size: 1.8em !important;
+	}
+
 	p {
 		font-size: 2em;
-		padding-left: 4em;
-		padding-right: 4em;
 	}
 
 	.full-menu {

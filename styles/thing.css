@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 0px) and (max-width: 625px) {
+	#header {
+		height: 0px !important;
+		margin-bottom: 0px !important;
+	}
+	.index_sidebar {
+		position: relative !important;
+		float: left !important;
+		width: 100% !important;
+	}
+	.index_sidebar2 {
+		width: 100% !important;
+	}
+	.index_body {
+		margin-left: 0 !important;
+		float: left !important;
+		width: 100% !important;
+	}
+	#content {
+		width: 90% !important;
+		margin: 0 5% !important;
+	}
+	.index_body img {
+		width: 100% !important;
+	}
+	.projects a {
+		width: 100% !important;
+		margin-bottom: 2em !important;
+	}
+	.projects .horiz_rule_work {
+		border-top: none !important;
+		padding-top: -10px !important;
+		margin-top: -15px !important;
+	}
+	.project_left_jmc,
+	.project_right_jmc {
+		width: 100% !important;
+	}
+	.project_right_jmc {
+		margin-left: 0 !important;
+	}
+	p,
+	h4 {
+		font-size: 18px !important;
+		line-height: 140% !important;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		margin: 0 auto;
+		background-image: url(images/bg-pattern.png);
+		background-repeat: repeat-x;
+	}
+
+	h1 {
+		font-family: "franklin-gothic-ext-comp-urw-1",
+			"franklin-gothic-ext-comp-urw-2";
+		font-size: 55px;
+		line-height: 55px;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0;
+		color: #3399cc;
+	}
+
+	p {
+		font-family: "skolar-1", "skolar-2", serif;
+		font-size: 14px;
+		line-height: 18px;
+		color: #666;
+		padding-top: 0;
+		margin-top: 5px;
+		padding-bottom: 0;
+		margin-bottom: 3px;
+	}
+
+	.content a {
+		font-family: "skolar-1", "skolar-2", serif;
+		font-size: 14px;
+		color: #3399cc;
+		padding-top: 0;
+		margin-top: 5px;
+	}
+
+	a {
+		text-decoration: none;
+		color: #3399cc;
+		border: none;
+	}
+
+	img {
+		border: none;
+	}
+
+	a:hover {
+		color: #999;
+	}
+
+	#content {
+		width: 80%;
+		margin: 0 10%;
+		padding-top: 40px;
+		float: left;
+	}
+
+	.index_sidebar {
+		border-top: 3px dashed #ccc;
+		width: 30%;
+		float: left;
+		padding-top: 0px;
+	}
+
+	.index_body {
+		border-top: 3px dashed #ccc;
+		width: 65%;
+		margin-left: 35%;
+		padding-top: 0px;
+	}
+
+	.horiz_rule {
+		border-top: thin dashed #3399cc;
+		padding-bottom: 14px;
+	}
+
+	h2 {
+		font-family: "franklin-gothic-ext-comp-urw-1",
+			"franklin-gothic-ext-comp-urw-2";
+		color: #3399cc;
+		font-size: 35px;
+		text-transform: uppercase;
+		padding-bottom: 0px;
+		margin-bottom: 20px;
+		margin-top: 10px;
+		line-height: 35px;
+	}
+
+	.project-internal img {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.project_left_jmc {
+		width: 40%;
+		float: left;
+	}
+	.project_left_jmc img {
+		width: 100%;
+	}
+	.project_right_jmc {
+		margin-left: 40%;
+		width: 60%;
+	}
+}
