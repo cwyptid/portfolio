@@ -65,7 +65,7 @@
 		text-transform: uppercase;
 		margin: 0;
 		padding: 0;
-		color: #3399cc;
+		color: #3D9B9B;
 	}
 
 	p {
@@ -82,14 +82,14 @@
 	.content a {
 		font-family: "skolar-1", "skolar-2", serif;
 		font-size: 14px;
-		color: #3399cc;
+		color: #3D9B9B;
 		padding-top: 0;
 		margin-top: 5px;
 	}
 
 	a {
 		text-decoration: none;
-		color: #3399cc;
+		color: #3D9B9B;
 		border: none;
 	}
 
@@ -123,14 +123,14 @@
 	}
 
 	.horiz_rule {
-		border-top: thin dashed #3399cc;
+		border-top: thin dashed #3D9B9B;
 		padding-bottom: 14px;
 	}
 
 	h2 {
 		font-family: "franklin-gothic-ext-comp-urw-1",
 			"franklin-gothic-ext-comp-urw-2";
-		color: #3399cc;
+		color: #3D9B9B;
 		font-size: 35px;
 		text-transform: uppercase;
 		padding-bottom: 0px;
