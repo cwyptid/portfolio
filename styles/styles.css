@@ -208,7 +208,7 @@ h3 {
 h1 {
 	padding: 1.5em 0 0.5em;
 	font-size: 3em;
-	color: #ef6c45;
+	color: #11a677;
 }
 
 h1,
@@ -252,7 +252,7 @@ p {
 
 #menuToggle a:hover,
 .full-menu a:hover {
-	color: #ef6c45;
+	color: #11a677;
 }
 
 #menuToggle input {
@@ -306,7 +306,7 @@ p {
 #menuToggle input:checked ~ span {
 	opacity: 1;
 	transform: rotate(45deg) translate(-2px, -1px);
-	background: #ef6c45;
+	background: #11a677;
 }
 
 /*
@@ -361,13 +361,13 @@ p {
 /* Main Content Area */
 
 .hithere {
-	content: url(../images/hithere.png);
+	content: url(../images/hithere.svg);
 	width: 100%;
 	height: auto;
 	max-width: 300px;
 	display: block;
 	margin: auto;
-	padding-top: 5em;
+	padding-top: 5em; 
 }
 
 .wrapper {
@@ -387,8 +387,8 @@ p {
 	border-radius: 4px;
 	background-color: #fff;
 	background-color: rgba(255, 255, 255, 0);
-	box-shadow: 0 0 0 0 #ef6c45 inset, 0.3em 0.2em 0 0 #d1d2cf;
-	border: 0.125em solid #ef6c45;
+	box-shadow: 0 0 0 0 #11a677 inset, 0.3em 0.2em 0 0 #d1d2cf;
+	border: 0.125em solid #11a677;
 	padding: 0.3em 0.8em;
 	text-align: center;
 	font-weight: bold;
@@ -397,7 +397,7 @@ p {
 	margin: 2em 0 0em;
 
 	&:hover {
-		box-shadow: 0 4em 0 0 #ef6c45 inset, 0em 0em 0 0 #d1d2cf;
+		box-shadow: 0 4em 0 0 #11a677 inset, 0em 0em 0 0 #d1d2cf;
 		transform: translate(0.3em, 0.2em);
 		color: #fff;
 	}
@@ -428,8 +428,8 @@ h2,
 	color: #242424;
 	line-height: 1.2;
 	padding: 0.5em;
-	border-top: 2px solid #ef6c45;
-	border-bottom: 2px solid #ef6c45;
+	border-top: 2px solid #11a677;
+	border-bottom: 2px solid #11a677;
 	margin: 2em;
 }
 
@@ -457,7 +457,7 @@ h2,
 }
 
 h2 > a:hover {
-	color: #ef6c45;
+	color: #11a677;
 	transition: 0.2s ease-in;
 }
 
@@ -471,7 +471,7 @@ h2 > a:hover {
 }
 
 #contact a {
-	color: #ef6c45;
+	color: #11a677;
 	text-decoration: underline;
 }
 
@@ -494,7 +494,7 @@ h2 > a:hover {
 }
 
 .back-link a {
-	color: #ef6c45;
+	color: #11a677;
 }
 
 .back-link a:hover {
@@ -629,7 +629,7 @@ h2 > a:hover {
 
 		.full-menu {
 			display: block;
-			border-bottom: 1px solid #ef6c45;
+			border-bottom: 1px solid #11a677;
 		}
 
 		.full-menu ul {
