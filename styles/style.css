@@ -60,7 +60,7 @@
 		text-transform: uppercase;
 		margin: 0;
 		padding: 0;
-		color: #ef6c45;
+		color: #11a677;
 	}
 
 	p {
@@ -77,14 +77,14 @@
 	.content a {
 		font-family: mr-eaves-modern, sans-serif;
 		font-size: 14px;
-		color: #ef6c45;
+		color: #11a677;
 		padding-top: 0;
 		margin-top: 5px;
 	}
 
 	a {
 		text-decoration: none;
-		color: #ef6c45;
+		color: #11a677;
 		border: none;
 	}
 
@@ -118,14 +118,14 @@
 	}
 
 	.horiz_rule {
-		border-top: thin solid #ef6c45;
+		border-top: thin solid #11a677;
 		padding-bottom: 14px;
 	}
 
 	h2 {
 		font-family: "franklin-gothic-ext-comp-urw-1",
 			"franklin-gothic-ext-comp-urw-2";
-		color: #ef6c45;
+		color: #11a677;
 		font-size: 35px;
 		text-transform: uppercase;
 		padding-bottom: 0px;
@@ -161,7 +161,7 @@ body {
 }
 
 #header {
-	background-color: #ef6c45;
+	background-color: #11a677;
 	height: 15px;
 	margin-top: 0px;
 	padding-top: 0px;
@@ -182,7 +182,7 @@ p {
 .content a {
 	font-family: mr-eaves-modern, sans-serif;
 	font-size: 14px;
-	color: #ef6c45;
+	color: #11a677;
 	padding-top: 0;
 	margin-top: 5px;
 }
@@ -197,7 +197,7 @@ p {
 a {
 	font-family: mr-eaves-modern, sans-serif;
 	text-decoration: none;
-	color: #ef6c45;
+	color: #11a677;
 	border: none;
 }
 
@@ -243,7 +243,7 @@ a:hover {
 	padding-top: 10px;
 }
 .horiz_rule {
-	border-top: thin solid #ef6c45;
+	border-top: thin solid #11a677;
 	padding-bottom: 14px;
 }
 
@@ -255,7 +255,7 @@ a:hover {
 }
 
 .horiz_rule_work {
-	border-top: thin solid #ef6c45;
+	border-top: thin solid #11a677;
 	width: 100%;
 	padding-top: 10px;
 	margin-top: 15px;
