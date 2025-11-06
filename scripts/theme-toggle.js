@@ -46,9 +46,20 @@
             if (button) {
                 // Check if it's a text button or icon button
                 if (button.classList.contains('theme-toggle-icon')) {
-                    // Update icon: bright bulb when lights are on, dim bulb when lights are off
-                    button.textContent = isDark ? '💡' : '💡';
-                    button.style.opacity = isDark ? '0.5' : '1';
+                    // Find the Font Awesome icon inside the button
+                    const icon = button.querySelector('i');
+                    if (icon) {
+                        // Toggle between solid (on) and regular (off) lightbulb
+                        if (isDark) {
+                            icon.classList.remove('fa-solid');
+                            icon.classList.add('fa-regular');
+                            button.style.opacity = '0.6';
+                        } else {
+                            icon.classList.remove('fa-regular');
+                            icon.classList.add('fa-solid');
+                            button.style.opacity = '1';
+                        }
+                    }
                     button.title = isDark ? 'Turn lights on' : 'Turn lights off';
                 } else {
                     // Update text button (homepage)

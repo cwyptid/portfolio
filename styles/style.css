@@ -370,23 +370,28 @@ h4 {
 	background: none;
 	border: none;
 	cursor: pointer;
-	font-size: 2em;
+	font-size: 1.5em;
 	padding: 8px;
 	margin-top: 10px;
-	transition: transform 0.2s ease, opacity 0.2s ease;
+	transition: transform 0.2s ease, color 0.3s ease;
 	display: inline-block;
 	line-height: 1;
+	color: var(--accent-primary);
 }
 
 .theme-toggle-icon:hover {
-	transform: scale(1.2);
+	transform: scale(1.15);
 }
 
 .theme-toggle-icon:active {
 	transform: scale(0.95);
 }
 
-/* Light bulb emoji will be replaced by JS based on theme */
+.theme-toggle-icon i {
+	transition: color 0.3s ease;
+}
+
+/* When dark mode is active, the icon will have reduced opacity via JS */
 
 .project-internal img {
 	width: 100%;
