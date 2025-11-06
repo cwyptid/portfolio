@@ -1,5 +1,59 @@
 /* Additional Default Styles for Responsive */
 
+/* Theme Variables */
+:root {
+	/* Light Theme (default) */
+	--bg-primary: #fff;
+	--bg-secondary: #eddbcd;
+	--text-primary: #242424;
+	--text-secondary: #3e3e3e;
+	--text-inverse: #fff;
+	--accent-primary: #11a677;
+	--accent-hover: #11a677;
+	--border-color: #11a677;
+	--shadow-color: #d1d2cf;
+	--highlight-bg: #ff9;
+	--highlight-text: #000;
+	--link-color: #11a677;
+	--link-hover: #242424;
+	--menu-bg: #eddbcd;
+	--hamburger-color: #000;
+	--project-bg: #fff;
+	--hr-border: #000;
+
+	/* SVG paths for light theme */
+	--svg-hithere: url(../images/hithere.svg);
+	--svg-web-bg: url("../images/web-bg.svg");
+
+	/* Transition for smooth theme changes */
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] {
+	/* Dark Theme */
+	--bg-primary: #1a1a1a;
+	--bg-secondary: #2d2d2d;
+	--text-primary: #ffffff;
+	--text-secondary: #d1d1d1;
+	--text-inverse: #1a1a1a;
+	--accent-primary: #11a677;
+	--accent-hover: #0d8a5f;
+	--border-color: #11a677;
+	--shadow-color: #0a0a0a;
+	--highlight-bg: #ffcc00;
+	--highlight-text: #1a1a1a;
+	--link-color: #11a677;
+	--link-hover: #ffffff;
+	--menu-bg: #2d2d2d;
+	--hamburger-color: #ffffff;
+	--project-bg: #2d2d2d;
+	--hr-border: #ffffff;
+
+	/* SVG paths for dark theme - placeholders for now */
+	--svg-hithere: url(../images/hithere-dark.svg);
+	--svg-web-bg: url("../images/web-bg-dark.svg");
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -144,14 +198,14 @@ a {
 }
 
 ins {
-	background-color: #ff9;
-	color: #000;
+	background-color: var(--highlight-bg);
+	color: var(--highlight-text);
 	text-decoration: none;
 }
 
 mark {
-	background-color: #ff9;
-	color: #000;
+	background-color: var(--highlight-bg);
+	color: var(--highlight-text);
 	font-style: italic;
 	font-weight: bold;
 }
@@ -175,7 +229,7 @@ hr {
 	display: block;
 	height: 1px;
 	border: 0;
-	border-top: 1px solid #000;
+	border-top: 1px solid var(--hr-border);
 	margin: 1em 0;
 	padding: 0;
 }
@@ -192,9 +246,10 @@ body {
 	padding: 0;
 
 	/* make it look decent enough */
-	background: #fff;
-	color: #000;
+	background: var(--bg-primary);
+	color: var(--text-primary);
 	font-family: mr-eaves-modern, sans-serif;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -208,7 +263,7 @@ h3 {
 h1 {
 	padding: 1.5em 0 0.5em;
 	font-size: 3em;
-	color: #11a677;
+	color: var(--accent-primary);
 }
 
 h1,
@@ -220,7 +275,7 @@ p {
 	font-size: 1.4375em;
 	padding: 0.75em 1.5em;
 	line-height: 1.5;
-	color: #3e3e3e;
+	color: var(--text-secondary);
 }
 
 /* Navigation */
@@ -244,7 +299,7 @@ p {
 	text-decoration: none;
 	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
 	font-weight: bold;
-	color: #000;
+	color: var(--text-primary);
 	text-transform: uppercase;
 	transition: color 0.3s ease;
 	font-size: 1.6em;
@@ -252,7 +307,7 @@ p {
 
 #menuToggle a:hover,
 .full-menu a:hover {
-	color: #11a677;
+	color: var(--accent-primary);
 }
 
 #menuToggle input {
@@ -280,7 +335,7 @@ p {
 	margin-bottom: 5px;
 	position: relative;
 
-	background: #000;
+	background: var(--hamburger-color);
 	border-radius: 3px;
 
 	z-index: 1;
@@ -299,14 +354,14 @@ p {
 	transform-origin: 0% 100%;
 }
 
-/* 
+/*
   * Transform all the slices of hamburger
   * into a crossmark.
   */
 #menuToggle input:checked ~ span {
 	opacity: 1;
 	transform: rotate(45deg) translate(-2px, -1px);
-	background: #11a677;
+	background: var(--accent-primary);
 }
 
 /*
@@ -334,7 +389,7 @@ p {
 	margin: -100px 0 0 -50px;
 	padding: 50px;
 	padding-top: 125px;
-	background: #eddbcd;
+	background: var(--menu-bg);
 	height: 400px;
 	list-style-type: none;
 	-webkit-font-smoothing: antialiased;
@@ -361,13 +416,13 @@ p {
 /* Main Content Area */
 
 .hithere {
-	content: url(../images/hithere.svg);
+	content: var(--svg-hithere);
 	width: 100%;
 	height: auto;
 	max-width: 300px;
 	display: block;
 	margin: auto;
-	padding-top: 5em; 
+	padding-top: 5em;
 }
 
 .wrapper {
@@ -378,28 +433,27 @@ p {
 .btn:link,
 .btn:visited {
 	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
-	color: #242424;
+	color: var(--text-primary);
 	line-height: 1em;
-	color: inherit;
 	text-decoration: none;
 	text-transform: uppercase;
 	display: inline-block;
 	border-radius: 4px;
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, 0);
-	box-shadow: 0 0 0 0 #11a677 inset, 0.3em 0.2em 0 0 #d1d2cf;
-	border: 0.125em solid #11a677;
+	background-color: transparent;
+	box-shadow: 0 0 0 0 var(--accent-primary) inset, 0.3em 0.2em 0 0 var(--shadow-color);
+	border: 0.125em solid var(--border-color);
 	padding: 0.3em 0.8em;
 	text-align: center;
 	font-weight: bold;
 	font-size: 2.375em;
-	transition: 0.25s box-shadow, 0.25s transform;
+	transition: 0.25s box-shadow, 0.25s transform, 0.25s color;
 	margin: 2em 0 0em;
+	cursor: pointer;
 
 	&:hover {
-		box-shadow: 0 4em 0 0 #11a677 inset, 0em 0em 0 0 #d1d2cf;
+		box-shadow: 0 4em 0 0 var(--accent-primary) inset, 0em 0em 0 0 var(--shadow-color);
 		transform: translate(0.3em, 0.2em);
-		color: #fff;
+		color: var(--text-inverse);
 	}
 }
 
@@ -419,17 +473,17 @@ footer {
 }
 
 .about {
-	color: #000;
+	color: var(--text-primary);
 }
 
 h2,
 .projh1 {
 	font-size: 2.5em;
-	color: #242424;
+	color: var(--text-primary);
 	line-height: 1.2;
 	padding: 0.5em;
-	border-top: 2px solid #11a677;
-	border-bottom: 2px solid #11a677;
+	border-top: 2px solid var(--border-color);
+	border-bottom: 2px solid var(--border-color);
 	margin: 2em;
 }
 
@@ -457,7 +511,7 @@ h2,
 }
 
 h2 > a:hover {
-	color: #11a677;
+	color: var(--accent-primary);
 	transition: 0.2s ease-in;
 }
 
@@ -471,12 +525,12 @@ h2 > a:hover {
 }
 
 #contact a {
-	color: #11a677;
+	color: var(--link-color);
 	text-decoration: underline;
 }
 
 #contact a:hover {
-	color: #242424;
+	color: var(--link-hover);
 	transition: 0.2s ease-in-out;
 }
 
@@ -494,16 +548,16 @@ h2 > a:hover {
 }
 
 .back-link a {
-	color: #11a677;
+	color: var(--link-color);
 }
 
 .back-link a:hover {
-	color: #242424;
+	color: var(--link-hover);
 	transition: 0.2s ease-in;
 }
 
 .back-link i {
-	color: #242424;
+	color: var(--text-primary);
 }
 
 .projlink {
@@ -583,7 +637,7 @@ h2 > a:hover {
 		}
 
 		body {
-			background-image: url("../images/web-bg.svg");
+			background-image: var(--svg-web-bg);
 			background-size: fixed;
 			background-repeat: no-repeat;
 			background-position-x: right;
@@ -629,7 +683,7 @@ h2 > a:hover {
 
 		.full-menu {
 			display: block;
-			border-bottom: 1px solid #11a677;
+			border-bottom: 1px solid var(--border-color);
 		}
 
 		.full-menu ul {
@@ -673,7 +727,7 @@ h2 > a:hover {
 	.btn:link,
 	.btn:visited {
 		font-size: 2.7em;
-		background-color: #fff;
+		background-color: transparent;
 	}
 
 	.hithere {
@@ -764,13 +818,13 @@ h2 > a:hover {
 			font-weight: bold;
 			text-transform: uppercase;
 			font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
-			color: #242424;
+			color: var(--text-primary);
 		}
 
 		.project-date {
 			font-size: 1.2em;
 			margin: 5px 0;
-			color: #3e3e3e;
+			color: var(--text-secondary);
 			font-family: mr-eaves-modern, sans-serif;
 		}
 	}
@@ -778,7 +832,7 @@ h2 > a:hover {
 .project-img {
 	width: 100%;
 	height: 80%;
-	background-color: #fff;
+	background-color: var(--project-bg);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -788,7 +842,7 @@ h2 > a:hover {
 	width: 100%;
 	height: 100%;
 	padding: 0;
-	background-color: #fff;
+	background-color: var(--project-bg);
 	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
 	display: flex;
 	justify-content: center;
