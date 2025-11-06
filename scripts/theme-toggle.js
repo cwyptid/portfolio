@@ -4,6 +4,19 @@
  */
 
 (function() {
+    // Preload SVG images to prevent flash on first toggle
+    const preloadImages = [
+        './images/hithere.svg',
+        './images/hithere-dark.svg',
+        './images/web-bg.svg',
+        './images/web-bg-dark.svg'
+    ];
+
+    preloadImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+
     // Get all theme toggle buttons (by ID and class)
     const themeToggleButtons = [
         document.getElementById('theme-toggle'),
@@ -23,7 +36,7 @@
     /**
      * Toggle the theme between light and dark
      */
-    function toggleTheme() {
+    function toggleTheme(event) {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
@@ -35,6 +48,11 @@
 
         // Update button text
         updateButtonText(newTheme === 'dark');
+
+        // Remove focus from button to prevent "stuck" appearance on mobile
+        if (event && event.currentTarget) {
+            event.currentTarget.blur();
+        }
     }
 
     /**
