@@ -365,6 +365,29 @@ h4 {
 	color: var(--text-inverse);
 }
 
+/* Lightbulb Icon Toggle for Child Pages */
+.theme-toggle-icon {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 2em;
+	padding: 8px;
+	margin-top: 10px;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+	display: inline-block;
+	line-height: 1;
+}
+
+.theme-toggle-icon:hover {
+	transform: scale(1.2);
+}
+
+.theme-toggle-icon:active {
+	transform: scale(0.95);
+}
+
+/* Light bulb emoji will be replaced by JS based on theme */
+
 .project-internal img {
 	width: 100%;
 	margin-bottom: 15px;

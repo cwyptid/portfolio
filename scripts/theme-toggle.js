@@ -38,16 +38,22 @@
     }
 
     /**
-     * Update button text based on current theme
+     * Update button text/icon based on current theme
      * @param {boolean} isDark - Whether dark mode is active
      */
     function updateButtonText(isDark) {
-        const text = isDark ? 'lights on?' : 'lights out?';
-
-        // Update all theme toggle buttons
         themeToggleButtons.forEach(button => {
             if (button) {
-                button.textContent = text;
+                // Check if it's a text button or icon button
+                if (button.classList.contains('theme-toggle-icon')) {
+                    // Update icon: bright bulb when lights are on, dim bulb when lights are off
+                    button.textContent = isDark ? '💡' : '💡';
+                    button.style.opacity = isDark ? '0.5' : '1';
+                    button.title = isDark ? 'Turn lights on' : 'Turn lights off';
+                } else {
+                    // Update text button (homepage)
+                    button.textContent = isDark ? 'lights on?' : 'lights out?';
+                }
             }
         });
     }
