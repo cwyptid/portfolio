@@ -377,6 +377,8 @@ h4 {
 	display: inline-block;
 	line-height: 1;
 	color: var(--accent-primary);
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
 }
 
 .theme-toggle-icon:hover {
@@ -387,8 +389,14 @@ h4 {
 	transform: scale(0.95);
 }
 
+.theme-toggle-icon:focus {
+	outline: none;
+	box-shadow: none;
+}
+
 .theme-toggle-icon i {
 	transition: color 0.3s ease;
+	pointer-events: none;
 }
 
 /* When dark mode is active, the icon will have reduced opacity via JS */
