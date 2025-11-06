@@ -81,7 +81,7 @@
                     button.title = isDark ? 'Turn lights on' : 'Turn lights off';
                 } else {
                     // Update text button (homepage)
-                    button.textContent = isDark ? 'lights on?' : 'lights out?';
+                    button.textContent = isDark ? 'lights on?' : 'lights off?';
                 }
             }
         });
