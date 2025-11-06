@@ -1,5 +1,49 @@
 @charset "UTF-8";
 
+/* Theme Variables - matches styles.css for consistency */
+:root {
+	/* Light Theme (default) */
+	--bg-primary: #fff;
+	--bg-secondary: #eddbcd;
+	--text-primary: #242424;
+	--text-secondary: #3e3e3e;
+	--text-tertiary: #666;
+	--text-inverse: #fff;
+	--accent-primary: #11a677;
+	--accent-hover: #11a677;
+	--border-color: #11a677;
+	--border-light: #ccc;
+	--shadow-color: #d1d2cf;
+	--highlight-bg: #ff9;
+	--highlight-text: #000;
+	--link-color: #11a677;
+	--link-hover: #242424;
+	--header-bg: #11a677;
+
+	/* Transition for smooth theme changes */
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] {
+	/* Dark Theme */
+	--bg-primary: #1a1a1a;
+	--bg-secondary: #2d2d2d;
+	--text-primary: #ffffff;
+	--text-secondary: #d1d1d1;
+	--text-tertiary: #b0b0b0;
+	--text-inverse: #1a1a1a;
+	--accent-primary: #11a677;
+	--accent-hover: #0d8a5f;
+	--border-color: #11a677;
+	--border-light: #444;
+	--shadow-color: #0a0a0a;
+	--highlight-bg: #ffcc00;
+	--highlight-text: #1a1a1a;
+	--link-color: #11a677;
+	--link-hover: #ffffff;
+	--header-bg: #11a677;
+}
+
 @media screen and (min-width: 0px) and (max-width: 625px) {
 	#header {
 		height: 0px !important;
@@ -48,8 +92,10 @@
 	}
 	body {
 		margin: 0 auto;
+		background-color: var(--bg-primary);
 		background-image: url(images/bg-pattern.png);
 		background-repeat: repeat-x;
+		transition: background-color 0.3s ease, color 0.3s ease;
 	}
 
 	h1 {
@@ -60,14 +106,14 @@
 		text-transform: uppercase;
 		margin: 0;
 		padding: 0;
-		color: #11a677;
+		color: var(--accent-primary);
 	}
 
 	p {
 		font-family: mr-eaves-modern, sans-serif;
 		font-size: 14px;
 		line-height: 18px;
-		color: #666;
+		color: var(--text-tertiary);
 		padding-top: 0;
 		margin-top: 5px;
 		padding-bottom: 0;
@@ -77,14 +123,14 @@
 	.content a {
 		font-family: mr-eaves-modern, sans-serif;
 		font-size: 14px;
-		color: #11a677;
+		color: var(--link-color);
 		padding-top: 0;
 		margin-top: 5px;
 	}
 
 	a {
 		text-decoration: none;
-		color: #11a677;
+		color: var(--link-color);
 		border: none;
 	}
 
@@ -93,7 +139,7 @@
 	}
 
 	a:hover {
-		color: #242424;
+		color: var(--link-hover);
 	}
 
 	#content {
@@ -104,28 +150,28 @@
 	}
 
 	.index_sidebar {
-		border-top: 3px solid #ccc;
+		border-top: 3px solid var(--border-light);
 		width: 30%;
 		float: left;
 		padding-top: 0px;
 	}
 
 	.index_body {
-		border-top: 3px solid #ccc;
+		border-top: 3px solid var(--border-light);
 		width: 65%;
 		margin-left: 35%;
 		padding-top: 0px;
 	}
 
 	.horiz_rule {
-		border-top: thin solid #11a677;
+		border-top: thin solid var(--border-color);
 		padding-bottom: 14px;
 	}
 
 	h2 {
 		font-family: "franklin-gothic-ext-comp-urw-1",
 			"franklin-gothic-ext-comp-urw-2";
-		color: #11a677;
+		color: var(--accent-primary);
 		font-size: 35px;
 		text-transform: uppercase;
 		padding-bottom: 0px;
@@ -158,10 +204,12 @@
 }
 body {
 	margin: 0 auto;
+	background-color: var(--bg-primary);
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #header {
-	background-color: #11a677;
+	background-color: var(--header-bg);
 	height: 15px;
 	margin-top: 0px;
 	padding-top: 0px;
@@ -172,7 +220,7 @@ p {
 	font-family: mr-eaves-modern, sans-serif;
 	font-size: 14px;
 	line-height: 18px;
-	color: #666;
+	color: var(--text-tertiary);
 	padding-top: 0;
 	margin-top: 5px;
 	padding-bottom: 0;
@@ -182,13 +230,13 @@ p {
 .content a {
 	font-family: mr-eaves-modern, sans-serif;
 	font-size: 14px;
-	color: #11a677;
+	color: var(--link-color);
 	padding-top: 0;
 	margin-top: 5px;
 }
 
 .sidebar {
-	border-top: 3px solid #ccc;
+	border-top: 3px solid var(--border-light);
 	width: 280px;
 	float: left;
 	padding-top: 0px;
@@ -197,7 +245,7 @@ p {
 a {
 	font-family: mr-eaves-modern, sans-serif;
 	text-decoration: none;
-	color: #11a677;
+	color: var(--link-color);
 	border: none;
 }
 
@@ -206,7 +254,7 @@ img {
 }
 
 a:hover {
-	color: #242424;
+	color: var(--link-hover);
 }
 
 #content {
@@ -239,23 +287,23 @@ a:hover {
 }
 
 .proj_rule {
-	border-top: 3px solid #ccc;
+	border-top: 3px solid var(--border-light);
 	padding-top: 10px;
 }
 .horiz_rule {
-	border-top: thin solid #11a677;
+	border-top: thin solid var(--border-color);
 	padding-bottom: 14px;
 }
 
 .date_posted_rule {
-	border-top: thin solid #ccc;
+	border-top: thin solid var(--border-light);
 	padding-bottom: 7px;
 	margin-top: 15px;
 	margin-bottom: 25px;
 }
 
 .horiz_rule_work {
-	border-top: thin solid #11a677;
+	border-top: thin solid var(--border-color);
 	width: 100%;
 	padding-top: 10px;
 	margin-top: 15px;
@@ -269,12 +317,12 @@ h2 {
 	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
 	font-weight: bold;
 	font-size: 2.5em;
-	color: #242424;
+	color: var(--text-primary);
 }
 
 h3 {
 	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
-	color: #242424;
+	color: var(--text-primary);
 	font-size: 1.5em;
 	text-transform: uppercase;
 	margin-bottom: 0px;
@@ -284,18 +332,37 @@ h3 {
 h4 {
 	font-size: 1.2em;
 	margin: 5px 0;
-	color: #3e3e3e;
+	color: var(--text-secondary);
 	font-family: mr-eaves-modern, sans-serif;
 	font-weight: 400;
 }
 
 .grey {
 	font-family: mr-eaves-modern, sans-serif;
-	color: #999;
+	color: var(--text-tertiary);
 	font-size: 16px;
 	text-transform: uppercase;
 	margin-bottom: 0px;
 	margin-top: 5px;
+}
+
+.theme-toggle-btn {
+	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
+	color: var(--text-primary);
+	background-color: transparent;
+	border: 2px solid var(--border-color);
+	padding: 8px 16px;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top: 10px;
+	transition: all 0.3s ease;
+	display: inline-block;
+}
+
+.theme-toggle-btn:hover {
+	background-color: var(--accent-primary);
+	color: var(--text-inverse);
 }
 
 .project-internal img {
@@ -343,12 +410,12 @@ h4 {
 	width: 60%;
 }
 .cci-commons img {
-	border: 1px solid #333;
+	border: 1px solid var(--text-secondary);
 	margin-bottom: 2em;
 }
 .project_right {
 	width: 60%;
-	border-left: 15px solid white;
+	border-left: 15px solid var(--bg-primary);
 	float: right;
 	margin-left: -15px;
 }
@@ -359,6 +426,6 @@ h4 {
 .project_right_small {
 	width: 40%;
 	float: right;
-	border-left: 15px solid white;
+	border-left: 15px solid var(--bg-primary);
 	margin-left: -15px;
 }

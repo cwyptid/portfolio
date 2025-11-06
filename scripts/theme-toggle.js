@@ -4,9 +4,12 @@
  */
 
 (function() {
-    // Get both toggle buttons (desktop and mobile)
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+    // Get all theme toggle buttons (by ID and class)
+    const themeToggleButtons = [
+        document.getElementById('theme-toggle'),
+        document.getElementById('theme-toggle-mobile'),
+        ...document.querySelectorAll('.theme-toggle-btn')
+    ].filter(Boolean); // Remove null/undefined entries
 
     // Get the current theme from localStorage or default to 'light'
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -41,23 +44,20 @@
     function updateButtonText(isDark) {
         const text = isDark ? 'lights on?' : 'lights out?';
 
-        if (themeToggleBtn) {
-            themeToggleBtn.textContent = text;
+        // Update all theme toggle buttons
+        themeToggleButtons.forEach(button => {
+            if (button) {
+                button.textContent = text;
+            }
+        });
+    }
+
+    // Add click event listeners to all theme toggle buttons
+    themeToggleButtons.forEach(button => {
+        if (button) {
+            button.addEventListener('click', toggleTheme);
         }
-
-        if (themeToggleMobileBtn) {
-            themeToggleMobileBtn.textContent = text;
-        }
-    }
-
-    // Add click event listeners to both buttons
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-    }
-
-    if (themeToggleMobileBtn) {
-        themeToggleMobileBtn.addEventListener('click', toggleTheme);
-    }
+    });
 
     // Optional: Listen for system theme preference changes
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
