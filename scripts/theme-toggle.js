@@ -87,7 +87,7 @@
         });
     }
 
-    // Add click event listeners to all theme toggle buttons
+    // Add click event listener to all theme toggle buttons
     themeToggleButtons.forEach(button => {
         if (button) {
             button.addEventListener('click', toggleTheme);
