@@ -3,34 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Interactive Design | Erin Lamp</title>
-
-		<!-- Primary Meta Tags -->
-		<meta name="title" content="Erin Lampert - Web Designer & Interactive Designer">
-		<meta name="description" content="Portfolio of Erin Lampert, full-time web designer at Kent State University specializing in interactive and web design.">
-		<meta name="keywords" content="web design, interactive design, UX design, UI design, Kent State University, portfolio">
-		<meta name="author" content="Erin Lampert">
-
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="Erin Lampert - Web Designer & Interactive Designer">
-		<meta property="og:description" content="Portfolio of Erin Lampert, full-time web designer at Kent State University specializing in interactive and web design.">
-
-		<!-- Twitter -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Erin Lampert - Web Designer & Interactive Designer">
-		<meta name="twitter:description" content="Portfolio of Erin Lampert, full-time web designer at Kent State University specializing in interactive and web design.">
-		
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTYX5FZWWV"></script>
-	<script>
- 		 window.dataLayer = window.dataLayer || [];
- 		 function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
-
-		  gtag('config', 'G-GTYX5FZWWV');
-	</script>
-
+		<title>:_) | Erin Lamp</title>
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="./styles/styles.css" />
 		<link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css">
@@ -46,7 +19,7 @@
 			<section>
 				<div class="hithere"></div>
 				<div class="wrapper" id="web">
-					<a href="https://github.com/cwyptid" class="btn">Code repo</a><br/>
+					<button id="theme-toggle" class="btn">lights off?</button><br/>
 				</div>
 			</section>
 			<section>
@@ -56,7 +29,7 @@
 					 > Welcome to my humble corner of the web.
 				</p>
 				<p>
-					 > I'm Erin Lampert, but some folks call me Eddie. I specialize in web and interactive storytelling.
+					 > I'm Erin Lampert, but people call me all sorts of things. I specialize in web and interactive storytelling.
 				</p>
 				<p>
 					 > Feel free to look around at my work. I hope you enjoy your stay!
@@ -64,15 +37,27 @@
 			</div>
 			</section>
 			<div class="wrapper" id="mobile">
-				<a href="https://github.com/cwyptid" class="btn">Code repo</a><br/>
+				<button id="theme-toggle-mobile" class="btn">lights off?</button><br/>
 			</div>
 		</main>
 
 		<section>
-			<h2>My Work</h2>
+			<h2>Stuff I'm Doing</h2>
 			<div class="proiect-wrapper">
 			<div class="project-container">
-
+				<a href="./slugs">
+					<div class="project grid-33">
+						<div class="project-img">
+							<div class="project-img-card">
+								<img src="./images/thumbnails/slugs.png" alt="" />
+							</div>
+						</div>
+						<div class="project-desc">
+							<div class="project-title">A Game About Slugs</div>
+							<div class="project-date">Storytelling Garden-Simulator</div>
+						</div>
+					</div>
+				</a>
 				<a href="./snails">
 					<div class="project grid-33">
 						<div class="project-img">
@@ -131,12 +116,11 @@
 					</div>
 				</a>
 				-->
-
 				<a href="./hero">
 					<div class="project grid-33">
 						<div class="project-img">
 							<div class="project-img-card">
-								<img src="./images/thumbnails/hero.png" alt="" />
+								<img src="./images/thumbnails/hero2.png" alt="" />
 							</div>
 						</div>
 						<div class="project-desc">
@@ -145,7 +129,6 @@
 						</div>
 					</div>
 				</a>
-
 			</div>
 		</div>
 
@@ -158,5 +141,6 @@
 		</footer>
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   		<script src="./scripts/prompt.js"></script>
+		<script src="./scripts/theme-toggle.js"></script>
 	</body>
 </html>
