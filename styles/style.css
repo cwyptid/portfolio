@@ -44,7 +44,7 @@
 	--header-bg: #11a677;
 }
 
-@media screen and (min-width: 0px) and (max-width: 625px) {
+@media screen and (min-width: 0px) and (max-width: 850px) {
 	#header {
 		height: 0px !important;
 		margin-bottom: 0px !important;
