@@ -1,0 +1,140 @@
+/* Kill the homepage two-column main grid on this page */
+@media screen and (min-width: 1000px) {
+	main {
+		display: block;
+		padding-top: 0;
+	}
+
+	body {
+		background-image: none;
+	}
+}
+
+/* Bio: illustration + text */
+.about-bio {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+	padding: 4em 2em 2em;
+}
+
+.me-illustration {
+	display: block;
+	max-width: 280px;
+	width: 100%;
+	height: auto;
+	flex-shrink: 0;
+}
+
+.bio-text h1 {
+	text-align: left;
+	padding: 0 0 0.3em;
+}
+
+.bio-text p {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* Skills section */
+.about-skills {
+	padding: 0 2em 2em;
+}
+
+.skills-label {
+	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1em;
+	color: var(--accent-primary);
+	letter-spacing: 0.05em;
+	padding: 0 0 0.5em;
+}
+
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6em;
+	padding: 0.5em 0 0;
+}
+
+.tag {
+	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	background-color: var(--accent-primary);
+	color: #fff;
+	padding: 0.25em 0.85em;
+	border-radius: 2em;
+	line-height: 1.4;
+}
+
+/* Lightbulb toggle */
+.theme-toggle-icon {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.5em;
+	padding: 8px;
+	color: var(--accent-primary);
+	transition: transform 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+	display: inline-block;
+	line-height: 1;
+}
+
+.theme-toggle-icon:hover  { transform: scale(1.15); }
+.theme-toggle-icon:active { transform: scale(0.95); }
+.theme-toggle-icon:focus  { outline: none; box-shadow: none; }
+.theme-toggle-icon i      { pointer-events: none; }
+
+.nav-end {
+	margin-left: auto;
+}
+
+footer {
+	padding: 3em 0;
+}
+
+@media screen and (min-width: 650px) {
+	.about-bio {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 3em;
+		padding-top: 5em;
+	}
+
+	.me-illustration {
+		max-width: 340px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.about-bio {
+		padding: 5em 3em 2em;
+		gap: 4em;
+		align-items: flex-start;
+	}
+
+	.me-illustration {
+		flex: 1 1 0;
+		max-width: 800px;
+		min-width: 0;
+	}
+
+	.bio-text {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
+	.about-skills {
+		padding: 0 3em 2em;
+	}
+
+	.skill-list li {
+		font-size: 3em;
+	}
+}

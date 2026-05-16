@@ -241,6 +241,13 @@ select {
 
 /* Global Styles */
 
+header {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1em 1.5em;
+}
+
+
 body {
 	margin: 0;
 	padding: 0;
@@ -264,6 +271,11 @@ h1 {
 	padding: 1.5em 0 0.5em;
 	font-size: 3em;
 	color: var(--accent-primary);
+}
+
+h1 .theme-toggle-icon {
+	font-size: 0.45em;
+	vertical-align: middle;
 }
 
 h1,
@@ -474,6 +486,7 @@ p {
 
 footer {
 	margin: 5em;
+	text-align: center;
 }
 
 .output {
@@ -546,6 +559,27 @@ h2 > a:hover {
 }
 
 /* Project Styles */
+
+/* Lightbulb toggle icon */
+.theme-toggle-icon {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.5em;
+	padding: 8px;
+	color: var(--accent-primary);
+	transition: transform 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+	display: inline-block;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+.theme-toggle-icon:hover  { transform: scale(1.15); }
+.theme-toggle-icon:active { transform: scale(0.95); }
+.theme-toggle-icon:focus  { outline: none; box-shadow: none; }
+.theme-toggle-icon i      { pointer-events: none; }
 
 .projh1 {
 	margin-bottom: 0.5em;
