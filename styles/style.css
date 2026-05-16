@@ -109,17 +109,6 @@
 		color: var(--accent-primary);
 	}
 
-	p {
-		font-family: mr-eaves-modern, sans-serif;
-		font-size: 14px;
-		line-height: 18px;
-		color: var(--text-tertiary);
-		padding-top: 0;
-		margin-top: 5px;
-		padding-bottom: 0;
-		margin-bottom: 3px;
-	}
-
 	.content a {
 		font-family: mr-eaves-modern, sans-serif;
 		font-size: 14px;
@@ -218,13 +207,9 @@ body {
 
 p {
 	font-family: mr-eaves-modern, sans-serif;
-	font-size: 14px;
-	line-height: 18px;
-	color: var(--text-tertiary);
-	padding-top: 0;
-	margin-top: 5px;
-	padding-bottom: 0;
-	margin-bottom: 3px;
+	font-size: 1.2em;
+	color: var(--text-secondary);
+	margin: 5px 0;
 }
 
 .content a {
@@ -335,6 +320,36 @@ h4 {
 	color: var(--text-secondary);
 	font-family: mr-eaves-modern, sans-serif;
 	font-weight: 400;
+}
+
+.cta-btn {
+	display: block;
+	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
+	font-size: 1em;
+	text-transform: uppercase;
+	color: var(--accent-primary);
+	border: 2px solid var(--accent-primary);
+	padding: 5px 10px;
+	margin: 5px 0;
+	text-align: center;
+	box-shadow: 0 0 0 0 var(--accent-primary) inset;
+	transition: box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.cta-btn:hover {
+	box-shadow: 0 4em 0 0 var(--accent-primary) inset;
+	color: var(--text-inverse);
+}
+
+.cta-btn--primary {
+	box-shadow: 0 0 0 0 var(--accent-primary) inset, 0.2em 0.15em 0 0 var(--shadow-color);
+	transition: box-shadow 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.cta-btn--primary:hover {
+	box-shadow: 0 4em 0 0 var(--accent-primary) inset, 0em 0em 0 0 var(--shadow-color);
+	transform: translate(0.2em, 0.15em);
+	color: var(--text-inverse);
 }
 
 .grey {
