@@ -258,6 +258,7 @@ p {
 	font-size: 1.2em;
 	color: var(--text-secondary);
 	margin: 5px 0;
+	text-wrap: pretty;
 }
 
 .content a {
