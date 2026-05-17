@@ -1,98 +1,101 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-GTYX5FZWWV"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "G-GTYX5FZWWV");
-		</script>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta
-			content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
-			name="viewport"
-		/>
-		<title>:_) | Erin Lamp</title>
-		<link href="./styles/style.css" rel="stylesheet" type="text/css" />
-		<link rel="icon" href="favicon.png" type="image/png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
-		<link rel="icon" type="image/x-icon" href="./images/favicon.png" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-	</head>
-
-	<body>
-		<div id="header"></div>
-		<div id="content">
-			<div class="index_sidebar">
-				<h2>A Game About Snails</h2>
-				<div class="horiz_rule">
-					<h3>About:</h3>
-					<p>
-						A small visual novel about snails, shells, and the stories we tell ourselves.<br />
-					<a class="cta-btn cta-btn--primary" href="https://cwyptid.github.io/snails/" target="_blank">Play the full game</a>
-					</p>
-				</div>
-				<div class="horiz_rule">
-					<h3>file under:</h3>
-					<p>
-						<em>The beginning of something bigger.</em><br />
-					</p>
-				</div>
-				<div class="horiz_rule">
-					<h3>Tools used:</h3>
-					<p>
-						- BGM by
-						<a href="https://joshuuu.itch.io/short-loopable-background-music"
-							>(joshuuu)</a
-						><br />
-						- SFX by
-						<a
-							href="https://noahkuehne.itch.io/free-menu-sound-pack-ui-sounds-v2"
-							>(noahkuehne)</a
-						>
-						<br />
-						- Determination Mono Web by
-						<a href="https://online-fonts.com/fonts/determination-mono-web"
-							>(Abacadaba)</a
-						>
-						<br />
-						- P5.js library
-						<br />
-						- Procreate
-					</p>
-				</div>
-				<div class="horiz_rule">
-					<a href="./">&larr; back to projects</a><br />
-					<button id="theme-toggle" class="theme-toggle-icon" title="Toggle theme">
-						<i class="fa-solid fa-lightbulb"></i>
-					</button>
-				</div>
-			</div>
-
-			<div class="index_body project-internal">
-				<div style="padding-top: 10px">
-					<img src="./images/snails/titlescreenv2.gif" />
-					<div class="project_left_jmc">
-						<img src="./images/snails/talking_waving.gif" />
-					</div>
-					<div class="project_right_jmc">
-						<img src="./images/snails/gamerecord.gif" />
-					</div>
-				</div>
-				<br clear="all" />
-				<br />
-			</div>
-
-			<!-- end of content div -->
-		</div>
-		<script src="./scripts/theme-toggle.js"></script>
-	</body>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta
+         content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
+         name="viewport"
+         />
+      <title>:_) | Erin Lamp</title>
+      <link href="./styles/roots.css" rel="stylesheet" type="text/css"/>
+      <link href="./styles/subpage.css" rel="stylesheet" type="text/css" />
+      <link href="./styles/menu.css" rel="stylesheet" type="text/css" />
+      <link rel="icon" href="favicon.png" type="image/png" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
+      <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+   </head>
+   <body>
+      <!-- Mobile hamburger -->
+      <nav id="menuToggle">
+         <input type="checkbox" />
+         <span></span>
+         <span></span>
+         <span></span>
+         <ul id="menu">
+            <li><a href="./">Home</a></li>
+            <li>
+               <button class="theme-toggle-btn theme-toggle-icon" title="Toggle theme">
+               <i class="fa-solid fa-lightbulb"></i>
+               </button>
+            </li>
+         </ul>
+      </nav>
+      <!-- Desktop nav -->
+      <nav class="full-menu">
+         <ul>
+            <li><a href="./">Home</a></li>
+            <li class="nav-end">
+               <button id="theme-toggle" class="theme-toggle-icon" title="Toggle theme">
+               <i class="fa-solid fa-lightbulb"></i>
+               </button>
+            </li>
+         </ul>
+      </nav>
+      <header></header>
+      <main>
+         <section class="index_sidebar">
+            <h1>A Game About Snails</h1>
+            <div class="horiz_rule">
+               <h2>About:</h2>
+               <p>A small visual novel about snails, shells, and being true to yourself.</p>
+               <a class="cta-btn cta-btn--primary" href="https://cwyptid.github.io/snails/" target="_blank">Play the full game</a>
+            </div>
+            <div class="horiz_rule">
+               <h2>File under:</h2>
+               <p>
+                  <em>The beginning of something bigger.</em><br />
+               </p>
+            </div>
+            <div class="horiz_rule">
+               <h2>Tools used:</h2>
+               <p>
+                  - BGM by
+                  <a href="https://joshuuu.itch.io/short-loopable-background-music"
+                     >(joshuuu)</a
+                     ><br />
+                  - SFX by
+                  <a
+                     href="https://noahkuehne.itch.io/free-menu-sound-pack-ui-sounds-v2"
+                     >(noahkuehne)</a
+                     >
+                  <br />
+                  - Determination Mono Web by
+                  <a href="https://online-fonts.com/fonts/determination-mono-web"
+                     >(Abacadaba)</a
+                     >
+                  <br />
+                  - P5.js library
+                  <br />
+                  - Procreate
+               </p>
+            </div>
+            <div class="horiz_rule"></div>
+            <a class="backlink" href="./">&larr; back to projects</a>
+         </section>
+         <section class="index-body">
+            <div style="padding-top: 10px">
+               <img src="./images/snails/titlescreenv2.gif" />
+               <div class="project_left">
+                  <img src="./images/snails/talking_waving.gif" />
+               </div>
+               <div class="project_right">
+                  <img src="./images/snails/gamerecord.gif" />
+               </div>
+            </div>
+         </section>
+      </main>
+      <script src="./scripts/theme-toggle.js"></script>
+      <footer></footer>
+   </body>
 </html>

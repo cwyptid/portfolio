@@ -1,22 +1,3 @@
-/* Override beige hamburger menu color */
-#menu {
-	background: var(--bg-primary);
-}
-
-/* Kill the homepage two-column main grid */
-@media screen and (min-width: 1000px) {
-	main {
-		display: block;
-		padding-top: 0;
-	}
-
-	body {
-		background-image: none;
-	}
-}
-
-/* ---- Layout ---- */
-
 .about-bio {
 	display: flex;
 	flex-direction: column;
@@ -27,13 +8,14 @@
 	margin: 0 auto;
 }
 
-@media screen and (min-width: 650px) {
-	.about-bio {
-		padding: 4em 3em 2em;
-	}
+a {
+	font-family: mr-eaves-modern, sans-serif;
+	text-decoration: none;
+	color: var(--link-color);
+	border: none;
 
-	.me-illustration {
-		max-width: 380px;
+	&:hover {
+		color: var(--link-hover);
 	}
 }
 
@@ -58,8 +40,11 @@
 	padding-right: 0;
 }
 
-/* ---- Pills ---- */
+a.backlink {
+	font-size: .75em;
+}
 
+/* ---- Pills ---- */
 .tag-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -80,38 +65,31 @@
 	line-height: 1.4;
 }
 
-/* ---- Nav toggle ---- */
+/* === Tablet: 650px+ === */
 
-.theme-toggle-icon {
-	background: none;
-	border: none;
-	cursor: pointer;
-	font-size: 1.5em;
-	padding: 8px;
-	color: var(--accent-primary);
-	transition: transform 0.2s ease;
-	-webkit-tap-highlight-color: transparent;
-	outline: none;
-	display: inline-block;
-	line-height: 1;
+@media screen and (min-width: 650px) {
+	.about-bio {
+		padding: 4em 3em 2em;
+	}
+
+	.me-illustration {
+		max-width: 380px;
+	}
 }
 
-.theme-toggle-icon:hover  { transform: scale(1.15); }
-.theme-toggle-icon:active { transform: scale(0.95); }
-.theme-toggle-icon:focus  { outline: none; box-shadow: none; }
-.theme-toggle-icon i      { pointer-events: none; }
-
-.nav-end {
-	margin-left: auto;
-}
-
-footer {
-	padding: 3em 0;
-}
-
-/* ---- Desktop: side by side ---- */
+/* === Desktop: 1100px+ — side by side +  Kill the homepage two-column main grid === */
 
 @media screen and (min-width: 1000px) {
+
+	main {
+		display: block;
+		padding-top: 0;
+	}
+
+	body {
+		background-image: none;
+	}
+
 	.about-bio {
 		flex-direction: row;
 		align-items: flex-start;

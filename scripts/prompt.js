@@ -24,11 +24,11 @@ var terminal = function () {
 					if (typeof char !== "undefined") typeChar();
 					else {
 						element.append(
-							'<br/><span class="output">' +
+							'<br/><span class="typewrite-output">' +
 								element.text().slice(9, -1) +
 								"</span>"
 						);
-						element.removeClass("active");
+						element.removeClass("typewrite-active");
 						typeLine(++idx);
 					}
 				},
@@ -36,7 +36,7 @@ var terminal = function () {
 			);
 		};
 		content = "" + content + "";
-		element.append(" ").addClass("active");
+		element.append(" ").addClass("typewrite-active");
 		typeChar();
 	};
 
