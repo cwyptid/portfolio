@@ -44,7 +44,7 @@
 	--header-bg: #11a677;
 }
 
-@media screen and (min-width: 0px) and (max-width: 850px) {
+@media screen and (min-width: 0px) and (max-width: 700px) {
 	#header {
 		height: 0px !important;
 		margin-bottom: 0px !important;
@@ -184,6 +184,54 @@
 	.project_right_jmc {
 		margin-left: 40%;
 		width: 60%;
+	}
+}
+
+/* Tablet: stacked, flex image grid */
+@media screen and (min-width: 701px) and (max-width: 1100px) {
+	#content {
+		width: 90% !important;
+		margin: 0 5% !important;
+		float: none !important;
+	}
+
+	.index_sidebar {
+		width: 100% !important;
+		float: none !important;
+	}
+
+	.index_body {
+		width: 100% !important;
+		float: none !important;
+		margin-left: 0 !important;
+	}
+
+	/* Full-width top image, then the two GIFs side by side */
+	.project-internal > div {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1em;
+		align-items: flex-start;
+	}
+
+	.project-internal > div > img {
+		width: 100%;
+		flex: 0 0 100%;
+	}
+
+	.project_left_jmc,
+	.project_right_jmc {
+		flex: 1 !important;
+		float: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		min-width: 0;
+	}
+
+	.project_left_jmc img,
+	.project_right_jmc img {
+		width: 100%;
+		display: block;
 	}
 }
 

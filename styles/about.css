@@ -23,6 +23,18 @@
 	align-items: center;
 	gap: 2em;
 	padding: 3em 2em 2em;
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 650px) {
+	.about-bio {
+		padding: 4em 3em 2em;
+	}
+
+	.me-illustration {
+		max-width: 380px;
+	}
 }
 
 .me-illustration {
@@ -53,14 +65,14 @@
 	flex-wrap: wrap;
 	gap: 0.6em;
 	padding: 0.5em 0 0;
-	justify-content: flex-start;
+	justify-content: center;
 }
 
 .tag {
 	font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	background-color: var(--accent-primary);
 	color: #fff;
 	padding: 0.25em 0.85em;
@@ -105,6 +117,8 @@ footer {
 		align-items: flex-start;
 		gap: 4em;
 		padding: 5em 3em 2em;
+		max-width: none;
+		margin: 0;
 	}
 
 	.me-illustration {
@@ -118,5 +132,13 @@ footer {
 		flex: 1;
 		width: auto;
 		min-width: 0;
+	}
+
+	.tag-list {
+		justify-content: flex-start;
+	}
+
+	.tag {
+		font-size: 1.5em;
 	}
 }
