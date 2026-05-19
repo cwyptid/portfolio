@@ -186,6 +186,10 @@ p {
 	transform: scale(1.05);
 }
 
+footer {
+	margin-bottom: 5rem;
+}
+
 footer>h2 {
 	margin-bottom: 1em;
 }
