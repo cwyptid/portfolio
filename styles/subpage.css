@@ -180,7 +180,12 @@ h1 .theme-toggle-icon {
 .index-body img {
   width: 100%;
   margin-bottom: 1em;
-  text-align: center;
+  display: block;
+  margin-inline: auto;
+}
+
+.max-300px {
+  max-width: 300px;
 }
 
 /* === Tablet: 701px+ — stack project images into flex grid === */
