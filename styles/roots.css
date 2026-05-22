@@ -58,7 +58,12 @@
 
 html {
   box-sizing: border-box;
-  scrollbar-gutter: stable;
+}
+
+@media screen and (min-width: 650px) {
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
 *,
