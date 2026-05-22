@@ -46,7 +46,6 @@ p {
   padding: 0.75em 1.5em;
   line-height: 1.5;
   color: var(--text-secondary);
-  text-wrap: pretty;
 }
 
 /* Main Content Area */
