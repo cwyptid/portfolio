@@ -254,6 +254,10 @@ footer > h2 {
   display: none;
 }
 
+.p-wrapper > p {
+  text-wrap: wrap;
+}
+
 /* === Tablet: 650px+  === */
 
 @media screen and (min-width: 650px) {
