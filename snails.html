@@ -1,101 +1,142 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-   <head>
-      <script>if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }</script>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <meta
-         content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
-         name="viewport"
-         />
-      <title>:_) | Erin Lamp</title>
-      <link href="./styles/roots.css" rel="stylesheet" type="text/css"/>
-      <link href="./styles/subpage.css" rel="stylesheet" type="text/css" />
-      <link href="./styles/menu.css" rel="stylesheet" type="text/css" />
-      <link rel="icon" href="favicon.png" type="image/png" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
-      <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-   </head>
-   <body>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-K0YSKX7YRC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-K0YSKX7YRC");
+    </script>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
+      name="viewport"
+    />
+    <title>A Game About Snails | Erin Lamp</title>
+    <link href="./styles/roots.css" rel="stylesheet" type="text/css" />
+    <link href="./styles/subpage.css" rel="stylesheet" type="text/css" />
+    <link href="./styles/menu.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
       <!-- Mobile hamburger -->
       <nav id="menuToggle">
-         <input type="checkbox" />
-         <span></span>
-         <span></span>
-         <span></span>
-         <ul id="menu">
-            <li><a href="./">Home</a></li>
-            <li>
-               <button class="theme-toggle-btn theme-toggle-icon" title="Toggle theme">
-               <i class="fa-solid fa-lightbulb"></i>
-               </button>
-            </li>
-         </ul>
+        <button
+          id="hamburger-btn"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="menu">
+          <li><a href="./">Home</a></li>
+          <li>
+            <button
+              class="theme-toggle-btn theme-toggle-icon"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-lightbulb"></i>
+            </button>
+          </li>
+        </ul>
       </nav>
       <!-- Desktop nav -->
       <nav class="full-menu">
-         <ul>
-            <li><a href="./">Home</a></li>
-            <li class="nav-end">
-               <button id="theme-toggle" class="theme-toggle-icon" title="Toggle theme">
-               <i class="fa-solid fa-lightbulb"></i>
-               </button>
-            </li>
-         </ul>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li class="nav-end">
+            <button
+              id="theme-toggle"
+              class="theme-toggle-icon"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-lightbulb"></i>
+            </button>
+          </li>
+        </ul>
       </nav>
-      <header></header>
-      <main>
-         <section class="index_sidebar">
-            <h1>A Game About Snails</h1>
-            <div class="horiz_rule">
-			   <br />
-               <p>A small visual novel about snails, shells, and being true to yourself.</p>
-				 <br />
-               	 <a class="cta-btn cta-btn--primary" href="https://cwyptid.github.io/snails/" target="_blank">Play the full game</a>
-            </div>
-            <div class="horiz_rule">
-               <h2>File under:</h2>
-               <p>
-                  <em>The beginning of something bigger.</em><br />
-               </p>
-            </div>
-            <div class="horiz_rule">
-               <h2>Tools used:</h2>
-               <p>
-                  - BGM by
-                  <a href="https://joshuuu.itch.io/short-loopable-background-music"
-                     >(joshuuu)</a
-                     ><br />
-                  - SFX by
-                  <a
-                     href="https://noahkuehne.itch.io/free-menu-sound-pack-ui-sounds-v2"
-                     >(noahkuehne)</a
-                     >
-                  <br />
-                  - Determination Mono Web by
-                  <a href="https://online-fonts.com/fonts/determination-mono-web"
-                     >(Abacadaba)</a
-                     >
-                  <br />
-                  - P5.js library
-                  <br />
-                  - Procreate
-               </p>
-            </div>
-            <div class="horiz_rule"></div>
-            <a class="backlink" href="./">&larr; back to projects</a>
-         </section>
-         <section class="index-body">
-               <div class="col-half">
-                  <img src="./images/snails/titlescreen.gif"  alt="A Game About Snails title screen"/>
-               </div>
-               <div class="col-half">
-                  <img src="./images/snails/talking_waving.gif" alt="Slime Tony's talking animation"/>
-               </div>
-            </div>
-         </section>
-      </main>
-      <script src="./scripts/theme-toggle.js"></script>
-      <footer></footer>
-   </body>
+    </header>
+    <main>
+      <section class="index_sidebar">
+        <h1>A Game About Snails</h1>
+        <hr class="horiz_rule" />
+        <p>
+          A small visual novel about snails, shells, and being true to yourself.
+        </p>
+        <a
+          class="cta-btn cta-btn--primary"
+          href="https://cwyptid.github.io/snails/"
+          target="_blank"
+          >Play the full game</a
+        >
+        <hr class="horiz_rule" />
+        <h2>File under:</h2>
+        <p><em>The beginning of something bigger.</em><br /></p>
+        <hr class="horiz_rule" />
+        <h2>Tools used:</h2>
+        <ul id="tools">
+          <li>
+            BGM by
+            <a href="https://joshuuu.itch.io/short-loopable-background-music"
+              >(joshuuu)</a
+            >
+          </li>
+          <li>
+            SFX by
+            <a
+              href="https://noahkuehne.itch.io/free-menu-sound-pack-ui-sounds-v2"
+              >(noahkuehne)</a
+            >
+          </li>
+          <li>
+            Determination Mono Web by
+            <a href="https://online-fonts.com/fonts/determination-mono-web"
+              >(Abacadaba)</a
+            >
+          </li>
+          <li>P5.js library</li>
+          <li>Procreate</li>
+        </ul>
+        <hr class="horiz_rule" />
+        <a class="backlink" href="./">&larr; back to projects</a>
+      </section>
+      <aside class="index-body">
+        <div class="col-half">
+          <img
+            src="./images/snails/titlescreen.gif"
+            alt="A Game About Snails title screen"
+          />
+        </div>
+        <div class="col-half">
+          <img
+            src="./images/snails/talking_waving.gif"
+            alt="Slime Tony's talking animation"
+          />
+        </div>
+      </aside>
+    </main>
+    <script src="./scripts/theme-toggle.js"></script>
+    <script src="./scripts/menu.js"></script>
+  </body>
 </html>

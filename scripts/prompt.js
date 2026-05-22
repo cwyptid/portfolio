@@ -3,49 +3,49 @@ $lines.hide();
 var lineContents = new Array();
 
 var terminal = function () {
-	var skip = 0;
-	typeLine = function (idx) {
-		idx == null && (idx = 0);
-		var element = $lines.eq(idx);
-		var content = lineContents[idx];
-		if (typeof content == "undefined") {
-			$(".skip").hide();
-			return;
-		}
-		var charIdx = 0;
+  var skip = 0;
+  typeLine = function (idx) {
+    idx == null && (idx = 0);
+    var element = $lines.eq(idx);
+    var content = lineContents[idx];
+    if (typeof content == "undefined") {
+      $(".skip").hide();
+      return;
+    }
+    var charIdx = 0;
 
-		var typeChar = function () {
-			var rand = Math.round(Math.random() * 150) + 25;
+    var typeChar = function () {
+      var rand = Math.round(Math.random() * 150) + 25;
 
-			setTimeout(
-				function () {
-					var char = content[charIdx++];
-					element.append(char);
-					if (typeof char !== "undefined") typeChar();
-					else {
-						element.append(
-							'<br/><span class="typewrite-output">' +
-								element.text().slice(9, -1) +
-								"</span>"
-						);
-						element.removeClass("typewrite-active");
-						typeLine(++idx);
-					}
-				},
-				skip ? 0 : rand
-			);
-		};
-		content = "" + content + "";
-		element.append(" ").addClass("typewrite-active");
-		typeChar();
-	};
+      setTimeout(
+        function () {
+          var char = content[charIdx++];
+          element.append(char);
+          if (typeof char !== "undefined") typeChar();
+          else {
+            element.append(
+              '<br/><span class="typewrite-output">' +
+                element.text().slice(9, -1) +
+                "</span>",
+            );
+            element.removeClass("typewrite-active");
+            typeLine(++idx);
+          }
+        },
+        skip ? 0 : rand,
+      );
+    };
+    content = "" + content + "";
+    element.append(" ").addClass("typewrite-active");
+    typeChar();
+  };
 
-	$lines.each(function (i) {
-		lineContents[i] = $(this).text();
-		$(this).text("").show();
-	});
+  $lines.each(function (i) {
+    lineContents[i] = $(this).text();
+    $(this).text("").show();
+  });
 
-	typeLine();
+  typeLine();
 };
 
 terminal();

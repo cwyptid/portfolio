@@ -1,43 +1,43 @@
 h1,
 h2 {
-	text-wrap: balance;
-	margin: 0;
+  text-wrap: balance;
+  margin: 0;
 }
 
 h1 {
-	padding: 0;
-	text-align: left;
+  padding: 0;
+  text-align: left;
 }
 
 h2 {
-	color: var(--text-primary);
-	font-size: 2em;
-	border: none;
-	text-align: left;
-	padding: .5em 0 1em 0;
+  color: var(--text-primary);
+  font-size: 2em;
+  border: none;
+  text-align: left;
+  padding: 0.5em 0 1em 0;
 }
 
 p {
-	padding: 0;
-	font-size: 1.5em;
-	line-height: 2;
-	margin: 0 0 28px 0;
-	letter-spacing: 0.5px;
+  padding: 0;
+  font-size: 1.5em;
+  line-height: 2;
+  margin: 0 0 28px 0;
+  letter-spacing: 0.5px;
 }
 
 main {
-	display: block;
-	max-width: 680px;
-	margin: auto;
-	padding: 2em 1.5em;
+  display: block;
+  max-width: 680px;
+  margin: auto;
+  padding: 2em 1.5em;
 }
 
-footer {
-	border-top: 2px solid var(--accent-primary);
-	opacity: 0.4;
+.bottom-rule {
+  border-top: 2px solid var(--accent-primary);
+  opacity: 0.4;
 }
 
 .subtitle {
-	padding-top: 1em;
-	font-size: 1em;
+  padding-top: 1em;
+  font-size: 1em;
 }
