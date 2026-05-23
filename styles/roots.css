@@ -18,6 +18,8 @@
   --menu-bg: #fff;
   --hamburger-color: #242424;
   --project-bg: #fff;
+  --tag-highlight: #eef8f5;
+  --project-tag-text: #242424;
 
   /* SVG paths for light theme */
   --svg-hithere: url(../images/hithere.svg);
@@ -34,7 +36,7 @@
   --font-h2: clamp(2.5rem, 1.561rem + 2.311vw, 3.8rem);
   --font-h2-sub: 1.5rem;
   --font-h2-special: 2rem;
-  --font-h3: 1.5rem;
+  --font-h3: 2rem;
   --font-body-reg: clamp(1.438rem, 1.031rem + 1vw, 2rem);
   --font-body-small: 1.2rem;
   --font-body-special: 1.5rem;
@@ -65,6 +67,7 @@
   --menu-bg: #1a1a1a;
   --hamburger-color: #fff;
   --project-bg: #2d2d2d;
+  --project-tag-text: #242424;
 
   /* SVG paths for dark theme */
   --svg-hithere: url(../images/hithere-dark.svg);
