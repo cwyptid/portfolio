@@ -20,6 +20,7 @@
   --project-bg: #fff;
   --tag-highlight: #eef8f5;
   --project-tag-text: #242424;
+  --card-shadow: rgba(0, 0, 0, 0.1);
 
   /* SVG paths for light theme */
   --svg-hithere: url(../images/hithere.svg);
@@ -32,23 +33,25 @@
 
   /* Text variables */
   --font-h1-main: clamp(3rem, 2.28rem + 3.58vw, 5.75rem);
-  --font-h1-sub: 2.5rem;
+  --font-h1-sub: clamp(2.15rem, 1.789rem + 0.889vw, 2.65rem);
   --font-h2: clamp(2.5rem, 1.561rem + 2.311vw, 3.8rem);
   --font-h2-sub: 1.5rem;
-  --font-h2-special: 2rem;
+  --font-h2-special: clamp(1.65rem, 1.397rem + 0.622vw, 2rem);
   --font-h3: 2rem;
   --font-body-reg: clamp(1.438rem, 1.031rem + 1vw, 2rem);
-  --font-body-small: 1.2rem;
-  --font-body-special: 1.5rem;
+  --font-body-small: clamp(1.2rem, 1.092rem + 0.267vw, 1.35rem);
+  --font-body-special: clamp(1.25rem, 1.069rem + 0.444vw, 1.5rem);
+  --font-list: clamp(1.15rem, 1.078rem + 0.178vw, 1.25rem);
   --font-a-reg: clamp(1.1rem, 0.811rem + 0.711vw, 1.5rem);
-  --font-a-special: 1.125rem;
+  --font-a-special: clamp(1rem, 0.819rem + 0.444vw, 1.25rem);
   --font-a-small: 1rem;
   --font-toggle: 1.5em;
   --font-toggle-h1: 0.45em;
   --font-button-big: clamp(2.5rem, 1.706rem + 1.956vw, 3.6rem);
   --font-tag: clamp(1.2rem, 0.983rem + 0.533vw, 1.5rem);
-  --font-subtitle: 1em;
-  --font-button-cta: 1em;
+  --font-subtitle: clamp(1rem, 0.819rem + 0.444vw, 1.25rem);
+  --font-button-cta: clamp(1rem, 0.856rem + 0.356vw, 1.2rem);
+  --font-card-body: 1.2rem;
 }
 
 [data-theme="dark"] {
@@ -68,6 +71,7 @@
   --hamburger-color: #fff;
   --project-bg: #2d2d2d;
   --project-tag-text: #242424;
+  --card-shadow: rgba(0, 0, 0, 0.4);
 
   /* SVG paths for dark theme */
   --svg-hithere: url(../images/hithere-dark.svg);
@@ -142,6 +146,10 @@ a {
   }
 }
 
+section > ul > li {
+  font-size: var(--font-list);
+}
+
 /* Buttons */
 .theme-toggle-icon {
   font-size: var(--font-toggle);
@@ -196,11 +204,6 @@ h1 .theme-toggle-icon {
     color 0.25s ease;
 }
 
-.cta-btn:hover {
-  box-shadow: 0 4em 0 0 var(--accent-primary) inset;
-  color: var(--text-inverse);
-}
-
 .cta-btn--primary {
   box-shadow:
     0 0 0 0 var(--accent-primary) inset,
@@ -209,14 +212,6 @@ h1 .theme-toggle-icon {
     box-shadow 0.25s ease,
     color 0.25s ease,
     transform 0.25s ease;
-}
-
-.cta-btn--primary:hover {
-  box-shadow:
-    0 4em 0 0 var(--accent-primary) inset,
-    0em 0em 0 0 var(--shadow-color);
-  transform: translate(0.2em, 0.15em);
-  color: var(--text-inverse);
 }
 
 /* Rules */
@@ -377,10 +372,28 @@ ul#menu li {
 }
 
 /* === Desktop: 1550px+ — max width for site === */
+
 @media screen and (min-width: 1550px) {
   body {
     max-width: 1550px;
     display: block;
     margin: auto;
+  }
+}
+
+/* === Major Animations === */
+
+@media (hover: hover) {
+  .cta-btn--primary:hover {
+    box-shadow:
+      0 4em 0 0 var(--accent-primary) inset,
+      0em 0em 0 0 var(--shadow-color);
+    transform: translate(0.2em, 0.15em);
+    color: var(--text-inverse);
+  }
+
+  .cta-btn:hover {
+    box-shadow: 0 4em 0 0 var(--accent-primary) inset;
+    color: var(--text-inverse);
   }
 }
