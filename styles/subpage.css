@@ -23,7 +23,8 @@ ul {
   margin-left: 0.675em;
 }
 
-img {
+img,
+video {
   border: none;
   max-width: 100%;
 }
@@ -52,7 +53,8 @@ main {
 }
 
 /* Project images */
-.index-body img {
+.index-body img,
+.index-body video {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
