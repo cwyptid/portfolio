@@ -20,17 +20,30 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
+    <!-- Document basics -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
     <meta
       name="description"
       content="Erin Lampert is a designer, artist, and developer based in northeast Ohio making things for the internet."
     />
+    <meta name="author" content="Erin Lampert" />
+    <link rel="canonical" href="https://www.erinlamp.com/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=":_) | Erin Lamp" />
+    <meta
+      property="og:description"
+      content="Erin Lampert is a designer, artist, and developer based in northeast Ohio making things for the internet."
+    />
+    <meta property="og:url" content="https://www.erinlamp.com/" />
 
     <title>:_) | Erin Lamp</title>
     <!-- Stylesheets -->
     <link href="./styles/roots.css" rel="stylesheet" type="text/css" />
     <link href="./styles/homepage.css" rel="stylesheet" type="text/css" />
+    <link href="./styles/carousel.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
     <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
     <link
@@ -72,7 +85,7 @@
         </aside>
       </section>
       <section id="projects">
-        <h2>Stuff I'm Doing</h2>
+        <h2>Projects</h2>
         <div class="projects-container">
           <article class="project-card">
             <a href="./slugs">
@@ -117,6 +130,59 @@
           </article>
         </div>
       </section>
+      <section id="illustrations">
+        <h2>Illustrations</h2>
+        <div class="carousel-wrapper">
+          <div class="carousel__display screen">
+            <img
+              class="thumbnail"
+              loading="lazy"
+              src="./images/illustrations/sal.gif"
+              alt=""
+            />
+          </div>
+          <nav class="carousel__nav">
+            <ul
+              class="carousel__nav--scroll-container carousel__track scroll--container"
+              id="scroll--container"
+            ></ul>
+            <div class="carousel__control--btn-group">
+              <button
+                class="carousel__control--btn prev"
+                aria-controls="scroll--container"
+                aria-label="Previous image"
+              >
+                <span class="carousel__control--icon">
+                  <i
+                    class="fa-solid fa-chevron-left icon-svg chevron-left"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    class="fa-solid fa-chevron-left icon-svg chevron-left--double"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+              <button
+                class="carousel__control--btn next"
+                aria-controls="scroll--container"
+                aria-label="Next image"
+              >
+                <span class="carousel__control--icon">
+                  <i
+                    class="fa-solid fa-chevron-right icon-svg chevron-right"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    class="fa-solid fa-chevron-right icon-svg chevron-right--double"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </section>
     </main>
     <footer>
       <h2>Say Howdy</h2>
@@ -128,5 +194,6 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="./scripts/prompt.js"></script>
     <script src="./scripts/theme-toggle.js"></script>
+    <script src="./scripts/carousel.js"></script>
   </body>
 </html>
