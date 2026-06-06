@@ -1,16 +1,20 @@
 const wrap = (i, l) => ((i % l) + l) % l;
 const IMAGES = [
-  { src: "./images/illustrations/sal.gif", alt: "Sal" },
-  { src: "./images/illustrations/friend.gif", alt: "Describe image 2" },
-  { src: "./images/illustrations/mushguy.gif", alt: "Describe image 3" },
   {
-    src: "./images/illustrations/prince.gif",
-    alt: "Describe image 3",
-    natural: true,
+    src: "./images/illustrations/sal.gif",
+    alt: "Sal Fisher from Sally Face; looping gif illustration",
   },
   {
-    src: "./images/illustrations/faces.gif",
-    alt: "Describe image 3",
+    src: "./images/illustrations/friend.gif",
+    alt: "Black blood oozing out to reveal a yellow-eyed creature with a white grin; looping illustration",
+  },
+  {
+    src: "./images/illustrations/mushguy.gif",
+    alt: "A cute mushroom guy who lifts his head to reveal an uglier mushroom guy underneath; looping illustration",
+  },
+  {
+    src: "./images/illustrations/prince.gif",
+    alt: "Ralsei from Deltarunel; looping gif illustration",
     natural: true,
   },
 ];
@@ -37,10 +41,10 @@ class Carousel {
 
   constructor(root, images) {
     this.#root = root;
-    this.#track = root.querySelector(".carousel__track");
+    this.#track = root.querySelector(".carousel-track");
     this.#prev = root.querySelector(".prev");
     this.#next = root.querySelector(".next");
-    this.#displayImg = root.querySelector(".carousel__display img");
+    this.#displayImg = root.querySelector(".carousel-display img");
 
     if (!this.#track || !this.#displayImg || !images?.length) return;
 
@@ -55,11 +59,11 @@ class Carousel {
 
     this.#buttons = this.#images.map((image, i) => {
       const li = document.createElement("li");
-      li.className = "scroll--element carousel__item";
+      li.className = "scroll-element carousel-item";
 
       const btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "scroll--btn carousel__button scroll__button";
+      btn.className = "scroll-btn carousel-button scroll-button";
       btn.append(
         Object.assign(new Image(), {
           src: image.src,

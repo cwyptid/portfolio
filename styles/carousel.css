@@ -14,7 +14,7 @@
   margin: auto;
 }
 
-.carousel__display {
+.carousel-display {
   contain: content;
   content-visibility: auto;
   border-radius: 1.2em;
@@ -23,8 +23,8 @@
     0 0.5em 1.3em var(--shadow-color);
 }
 
-/* Default: locked to 16:9, cropped */
-.carousel__display img {
+/* Default */
+.carousel-display img {
   display: block;
   inline-size: 100%;
   block-size: auto;
@@ -32,15 +32,15 @@
   object-fit: cover;
 }
 
-/* Flagged: its own ratio, no crop */
-.carousel__display img.is-natural {
+/* If you're special */
+.carousel-display img.is-natural {
   aspect-ratio: auto;
   block-size: auto;
   object-fit: contain;
 }
 
-/* Nav thumbnails: always uniform */
-.carousel__button img {
+/* Makes the thumbnails all uniform */
+.carousel-button img {
   display: block;
   inline-size: 100%;
   block-size: auto;
@@ -48,7 +48,7 @@
   aspect-ratio: 16 / 9;
 }
 
-.carousel__nav {
+.carousel-nav {
   z-index: 10;
   block-size: 100%;
   container: navigation / inline-size;
@@ -60,13 +60,13 @@
   color: var(--accent-primary); /* drives the dot color at <500px */
 }
 
-.carousel__control--btn-group {
+.carousel-control-btn-group {
   place-self: center;
   gap: 1.5rem;
   display: flex;
 }
 
-.carousel__control--btn {
+.carousel-control-btn {
   cursor: pointer;
   width: clamp(2rem, 1.0234rem + 3.125vw, 2.625rem);
   aspect-ratio: 1;
@@ -75,20 +75,20 @@
   overflow: hidden;
 }
 
-.carousel__control--btn:hover .icon-svg {
+.carousel-control-btn:hover .icon-svg {
   color: var(--text-primary);
 }
 
-.carousel__control--btn:active {
+.carousel-control-btn:active {
   transform: scale(0.86);
 }
 
-.carousel__control--btn:focus-visible {
+.carousel-control-btn:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-.carousel__control--icon {
+.carousel-control-icon {
   display: flex;
   position: relative;
   aspect-ratio: 1;
@@ -96,7 +96,7 @@
   gap: 0.5rem;
 }
 
-.carousel__control--icon > * {
+.carousel-control-icon > * {
   flex-shrink: 0;
 }
 
@@ -120,36 +120,36 @@
   );
 }
 
-[class$="--double"] {
+[class$="-double"] {
   opacity: 0;
   transform: scale(0);
 }
 
-.next .carousel__control--icon {
+.next .carousel-control-icon {
   flex-direction: row-reverse;
 }
 
-.next:hover .carousel__control--icon > .chevron-right {
+.next:hover .carousel-control-icon > .chevron-right {
   transform: translateX(calc(100% + 0.25rem)) scale(0);
   opacity: 0;
 }
 
-.next:hover .carousel__control--icon > .chevron-right--double {
+.next:hover .carousel-control-icon > .chevron-right-double {
   transform: scale(1) translateX(calc(100% + 0.5rem));
   opacity: 1;
 }
 
-.prev:hover .carousel__control--icon > .chevron-left {
+.prev:hover .carousel-control-icon > .chevron-left {
   transform: translateX(calc(-100% - 0.25rem)) scale(0);
   opacity: 0;
 }
 
-.prev:hover .carousel__control--icon > .chevron-left--double {
+.prev:hover .carousel-control-icon > .chevron-left-double {
   transform: scale(1) translateX(calc(-100% - 0.5rem));
   opacity: 1;
 }
 
-.carousel__track {
+.carousel-track {
   --container-width: 100cqi;
   --gap: 1rem;
   --visible-items: 5;
@@ -158,7 +158,6 @@
     (var(--container-width) - var(--total-gap)) / var(--visible-items)
   );
   scrollbar-gutter: stable;
-
   container: scrollContainer / inline-size;
   list-style: none;
   display: flex;
@@ -173,16 +172,16 @@
   scroll-padding-inline: 0.5rem;
 }
 
-.carousel__track::-webkit-scrollbar {
+.carousel-track::-webkit-scrollbar {
   display: none;
 }
 
-.carousel__item {
+.carousel-item {
   scroll-snap-align: start;
   flex: 1 0 var(--item-width);
 }
 
-.carousel__button {
+.carousel-button {
   cursor: pointer;
   display: grid;
   position: relative;
@@ -202,12 +201,12 @@
     filter 300ms cubic-bezier(0.4, 0.9, 0.27, 1.08);
 }
 
-.carousel__button[aria-pressed="true"] {
+.carousel-button[aria-pressed="true"] {
   outline-color: var(--accent-primary);
   transform: initial;
 }
 
-.carousel__button:not([aria-pressed="true"]) {
+.carousel-button:not([aria-pressed="true"]) {
   filter: grayscale(90%) opacity(0.5);
 }
 
@@ -217,32 +216,32 @@
   overflow: hidden;
 }
 
-.carousel__button:not([aria-pressed="true"]):hover {
+.carousel-button:not([aria-pressed="true"]):hover {
   transform: inherit;
   filter: none;
 }
 
 @container navigation (max-width: 780px) {
-  .carousel__nav--scroll-container {
+  .carousel-nav-scroll-container {
     --visible-items: 4;
   }
 }
 
 @container navigation (max-width: 662px) {
-  .carousel__nav--scroll-container {
+  .carousel-nav-scroll-container {
     --visible-items: 3;
   }
 }
 
 @container navigation (max-width: 500px) {
-  .carousel__track {
+  .carousel-track {
     justify-content: center;
     gap: 0.875rem;
   }
-  .carousel__item {
+  .carousel-item {
     display: contents;
   }
-  .carousel__button {
+  .carousel-button {
     width: 0.875em;
     height: 0.875em;
     margin-block: 0.25em;
@@ -256,7 +255,7 @@
     visibility: hidden;
   }
 
-  .carousel__button:not([aria-pressed="true"]):hover {
+  .carousel-button:not([aria-pressed="true"]):hover {
     background: currentColor;
   }
 }
