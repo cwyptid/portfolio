@@ -85,7 +85,7 @@
         </aside>
       </section>
       <section id="projects">
-        <h2>Stuff I'm Doing</h2>
+        <h2>Projects</h2>
         <div class="projects-container">
           <article class="project-card">
             <a href="./slugs">
@@ -130,6 +130,62 @@
           </article>
         </div>
       </section>
+      <section id="illustrations">
+        <h2 class="section-header">Illustrations</h2>
+        <p class="text-center">
+          I like to draw simple things and even make them move sometimes.
+        </p>
+        <section class="carousel-wrapper" aria-label="Illustrations">
+          <div class="carousel-nav">
+            <div class="carousel-control-btn-group">
+              <button
+                class="carousel-control-btn prev"
+                aria-controls="scroll-container"
+                aria-label="Previous image"
+              >
+                <span class="carousel-control-icon">
+                  <i
+                    class="fa-solid fa-chevron-left icon-svg chevron-left"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    class="fa-solid fa-chevron-left icon-svg chevron-left-double"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+              <button
+                class="carousel-control-btn next"
+                aria-controls="scroll-container"
+                aria-label="Next image"
+              >
+                <span class="carousel-control-icon">
+                  <i
+                    class="fa-solid fa-chevron-right icon-svg chevron-right"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    class="fa-solid fa-chevron-right icon-svg chevron-right-double"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+            </div>
+            <ul
+              class="carousel-nav-scroll-container carousel-track scroll-container"
+              id="scroll-container"
+            ></ul>
+          </div>
+          <figure class="carousel-display screen">
+            <img
+              class="thumbnail"
+              loading="eager"
+              src="./images/illustrations/sal.gif"
+              alt="Sal Fisher from Sally Face; looping gif illustration"
+            />
+          </figure>
+        </section>
+      </section>
     </main>
     <footer>
       <h2>Say Howdy</h2>
@@ -138,8 +194,8 @@
         <a href="mailto:possiblybmo@gmail.com">possiblybmo@gmail.com</a>.
       </p>
     </footer>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="./scripts/prompt.js"></script>
     <script src="./scripts/theme-toggle.js"></script>
+    <script src="./scripts/carousel.js"></script>
   </body>
 </html>
