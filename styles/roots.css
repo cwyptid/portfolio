@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "node_modules/modern-normalize/modern-normalize.css";
+@import "modern-normalize.css";
 
 /* Theme Variables */
 :root {
@@ -116,7 +116,6 @@ h3 {
   text-transform: uppercase;
   font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
   font-weight: bold;
-  text-wrap: balance;
 }
 
 h2,
