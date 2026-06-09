@@ -85,6 +85,7 @@ class Carousel {
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "scroll-btn carousel-button scroll-button";
+      btn.setAttribute("aria-pressed", "false");
       btn.append(
         Object.assign(new Image(), {
           src: image.src,
