@@ -17,7 +17,7 @@
 .carousel-display {
   contain: content;
   content-visibility: auto;
-  border-radius: 1.2em;
+  border-radius: 5px;
   box-shadow:
     0 0.375em 0.67em var(--shadow-color),
     0 0.5em 1.3em var(--shadow-color);
@@ -52,12 +52,10 @@
   z-index: 10;
   block-size: 100%;
   container: navigation / inline-size;
-  grid-row-start: navigation-end;
   grid-column: 1 / -1;
   display: grid;
   gap: 1em;
   position: relative;
-  color: var(--accent-primary); /* drives the dot color at <500px */
 }
 
 .carousel-control-btn-group {
@@ -73,6 +71,8 @@
   background: none;
   border: none;
   overflow: hidden;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .carousel-control-btn:hover .icon-svg {
@@ -190,7 +190,7 @@
   outline: 0.22em solid transparent;
   outline-offset: 0.27rem;
   border: none;
-  border-radius: 0.875em;
+  border-radius: 5px;
   overflow: hidden;
   background: none;
   transform: scale(0.93);
@@ -216,11 +216,6 @@
   overflow: hidden;
 }
 
-.carousel-button:not([aria-pressed="true"]):hover {
-  transform: inherit;
-  filter: none;
-}
-
 @container navigation (max-width: 780px) {
   .carousel-nav-scroll-container {
     --visible-items: 4;
@@ -230,32 +225,5 @@
 @container navigation (max-width: 662px) {
   .carousel-nav-scroll-container {
     --visible-items: 3;
-  }
-}
-
-@container navigation (max-width: 500px) {
-  .carousel-track {
-    justify-content: center;
-    gap: 0.875rem;
-  }
-  .carousel-item {
-    display: contents;
-  }
-  .carousel-button {
-    width: 0.875em;
-    height: 0.875em;
-    margin-block: 0.25em;
-    filter: none;
-    &[aria-pressed="true"] {
-      background: currentColor;
-      scale: 1.125;
-    }
-  }
-  .thumbnail {
-    visibility: hidden;
-  }
-
-  .carousel-button:not([aria-pressed="true"]):hover {
-    background: currentColor;
   }
 }

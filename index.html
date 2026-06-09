@@ -131,21 +131,12 @@
         </div>
       </section>
       <section id="illustrations">
-        <h2>Illustrations</h2>
-        <div class="carousel-wrapper">
-          <div class="carousel-display screen">
-            <img
-              class="thumbnail"
-              loading="lazy"
-              src="./images/illustrations/sal.gif"
-              alt=""
-            />
-          </div>
-          <nav class="carousel-nav">
-            <ul
-              class="carousel-nav-scroll-container carousel-track scroll-container"
-              id="scroll-container"
-            ></ul>
+        <h2 class="section-header">Illustrations</h2>
+        <p class="text-center">
+          I like to draw simple things and even make them move sometimes.
+        </p>
+        <section class="carousel-wrapper" aria-label="Illustrations">
+          <div class="carousel-nav">
             <div class="carousel-control-btn-group">
               <button
                 class="carousel-control-btn prev"
@@ -180,8 +171,20 @@
                 </span>
               </button>
             </div>
-          </nav>
-        </div>
+            <ul
+              class="carousel-nav-scroll-container carousel-track scroll-container"
+              id="scroll-container"
+            ></ul>
+          </div>
+          <figure class="carousel-display screen">
+            <img
+              class="thumbnail"
+              loading="eager"
+              src="./images/illustrations/sal.gif"
+              alt="Sal Fisher from Sally Face; looping gif illustration"
+            />
+          </figure>
+        </section>
       </section>
     </main>
     <footer>
@@ -191,7 +194,6 @@
         <a href="mailto:possiblybmo@gmail.com">possiblybmo@gmail.com</a>.
       </p>
     </footer>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="./scripts/prompt.js"></script>
     <script src="./scripts/theme-toggle.js"></script>
     <script src="./scripts/carousel.js"></script>

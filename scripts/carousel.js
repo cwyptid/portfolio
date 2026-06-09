@@ -5,17 +5,38 @@ const IMAGES = [
     alt: "Sal Fisher from Sally Face; looping gif illustration",
   },
   {
-    src: "./images/illustrations/friend.gif",
-    alt: "Black blood oozing out to reveal a yellow-eyed creature with a white grin; looping illustration",
+    src: "./images/illustrations/sneak.png",
+    alt: "Cute toast bear illustration",
   },
   {
     src: "./images/illustrations/mushguy.gif",
     alt: "A cute mushroom guy who lifts his head to reveal an uglier mushroom guy underneath; looping illustration",
   },
   {
+    src: "./images/illustrations/friend.gif",
+    alt: "Black blood oozing out to reveal a yellow-eyed creature with a white grin; looping illustration",
+  },
+  {
+    src: "./images/illustrations/tamas.png",
+    alt: "Kuchipatchi and Mametchi Tamagotchi illustrations",
+  },
+  {
     src: "./images/illustrations/prince.gif",
     alt: "Ralsei from Deltarunel; looping gif illustration",
     natural: true,
+  },
+  {
+    src: "./images/illustrations/pupy.gif",
+    alt: "Weird puppy from space with several legs; looping gif illustration",
+    natural: true,
+  },
+  {
+    src: "./images/illustrations/snooby.png",
+    alt: "Snoopy from Peanuts illustration",
+  },
+  {
+    src: "./images/illustrations/finn.png",
+    alt: "Finn the Human from Adventure Time illustration",
   },
 ];
 
@@ -133,9 +154,20 @@ class Carousel {
     action();
   };
 
+  #handleWheel = (e) => {
+    if (e.deltaY !== 0 && e.deltaX === 0) {
+      window.scrollBy({ top: e.deltaY, behavior: "instant" });
+      e.preventDefault();
+    }
+  };
+
   #init() {
     const { signal } = this.#controller;
     this.#track.addEventListener("click", this.#handleTrackClick, { signal });
+    this.#track.addEventListener("wheel", this.#handleWheel, {
+      signal,
+      passive: false,
+    });
     this.#prev?.addEventListener(
       "click",
       () => this.#set(this.#currentIndex - 1),
@@ -147,10 +179,6 @@ class Carousel {
       { signal },
     );
     this.#root.addEventListener("keydown", this.#handleKeyDown, { signal });
-  }
-
-  destroy() {
-    this.#controller.abort();
   }
 }
 
