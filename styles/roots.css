@@ -28,8 +28,8 @@
 
   /* Transition for smooth theme changes */
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+    background-color 0.25s ease,
+    color 0.25s ease;
 
   /* Text variables */
   --font-h1-main: clamp(3rem, 2.28rem + 3.58vw, 5.75rem);
@@ -100,8 +100,8 @@ body {
   background-position-y: top;
   font-family: mr-eaves-modern, sans-serif;
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+    background-color 0.25s ease,
+    color 0.25s ease;
   line-height: 1;
 }
 
@@ -139,9 +139,11 @@ a {
   text-decoration: none;
   color: var(--link-color);
   border: none;
+  transition: color 0.25s ease;
 
   &:hover {
     color: var(--link-hover);
+    transition: color 0.25s ease;
   }
 
   &.backlink {
@@ -277,7 +279,7 @@ ul#menu li {
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 
   &:hover {
     color: var(--accent-primary);
@@ -305,9 +307,9 @@ ul#menu li {
   width: 40px;
   height: 3px;
   transition:
-    transform 250ms ease,
-    opacity 250ms ease,
-    background-color 250ms ease;
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background-color 0.25s ease;
   transform-origin: center;
 }
 
