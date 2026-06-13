@@ -18,9 +18,7 @@
   contain: content;
   content-visibility: auto;
   border-radius: 5px;
-  box-shadow:
-    0 0.375em 0.67em var(--shadow-color),
-    0 0.5em 1.3em var(--shadow-color);
+  box-shadow: 0 30px 40px var(--card-shadow);
 }
 
 /* Default */
@@ -196,9 +194,9 @@
   transform: scale(0.93);
   transform-origin: center;
   transition:
-    outline-color 0.25s ease,
-    transform 0.25s,
-    filter 0.25s;
+    var(--transition-transform),
+    filter 0.5s cubic-bezier(0.59, 2.3, 0.62, 0.69),
+    outline-color 0.25s cubic-bezier(0.59, 2.3, 0.62, 0.69);
 }
 
 .carousel-button[aria-pressed="true"] {

@@ -73,10 +73,7 @@
               button.style.opacity = "1";
             }
           }
-          button.title = isDark ? "Turn lights on" : "Turn lights off";
-        } else {
-          // Update text button (homepage)
-          button.textContent = isDark ? "lights on?" : "lights off?";
+          button.title = isDark ? "Lights on?" : "Lights off?";
         }
       }
     });

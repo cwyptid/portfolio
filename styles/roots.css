@@ -10,7 +10,7 @@
   --text-inverse: #fff;
   --accent-primary: #11a677;
   --border-color: #11a677;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --btn-shadow: rgba(0, 0, 0, 0.1);
   --highlight-bg: #e6ff93;
   --highlight-text: #000;
   --link-color: #11a677;
@@ -26,10 +26,12 @@
   --svg-hithere: url(../images/hithere.svg);
   --svg-web-bg: url("../images/web-bg.svg");
 
-  /* Transition for smooth theme changes */
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease;
+  /* Transitions */
+  --transition-theme-color: background-color 0.5s ease, color 0.5s ease;
+  --transition-theme-opacity: opacity 0.5s ease;
+  --transition-transform: transform 0.25s cubic-bezier(0.59, 2.3, 0.62, 0.69);
+  --transition-color: color 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  --transition-shadow: box-shadow 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 
   /* Text variables */
   --font-h1-main: clamp(3rem, 2.28rem + 3.58vw, 5.75rem);
@@ -62,7 +64,7 @@
   --text-inverse: #1a1a1a;
   --accent-primary: #11a677;
   --border-color: #11a677;
-  --shadow-color: #ffffff11;
+  --btn-shadow: #ffffff11;
   --highlight-bg: #c7dc80;
   --highlight-text: #1a1a1a;
   --link-color: #11a677;
@@ -73,9 +75,8 @@
   --project-tag-text: #242424;
   --card-shadow: rgba(0, 0, 0, 0.4);
 
-  /* SVG paths for dark theme */
+  /* SVG path for dark theme */
   --svg-hithere: url(../images/hithere-dark.svg);
-  --svg-web-bg: url("../images/web-bg-dark.svg");
 }
 
 *,
@@ -99,9 +100,7 @@ body {
   background-position-x: right;
   background-position-y: top;
   font-family: mr-eaves-modern, sans-serif;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease;
+  transition: var(--transition-theme-color);
   line-height: 1;
 }
 
@@ -139,11 +138,10 @@ a {
   text-decoration: none;
   color: var(--link-color);
   border: none;
-  transition: color 0.25s ease;
+  transition: 0.25s ease;
 
   &:hover {
     color: var(--link-hover);
-    transition: color 0.25s ease;
   }
 
   &.backlink {
@@ -167,26 +165,21 @@ section > ul > li {
   outline: none;
   padding: 8px;
   vertical-align: middle;
-  transition: transform 0.2s ease;
+  transition: var(--transition-transform);
   -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 h1 .theme-toggle-icon {
   font-size: var(--font-toggle-h1);
   vertical-align: middle;
-}
-
-.theme-toggle-icon:hover {
-  transform: scale(1.15);
-}
-
-.theme-toggle-icon:active {
-  transform: scale(0.95);
-}
-
-.theme-toggle-icon:focus {
-  outline: none;
-  box-shadow: none;
 }
 
 .theme-toggle-icon i {
@@ -204,19 +197,16 @@ h1 .theme-toggle-icon {
   margin: 0.313em 0;
   text-align: center;
   text-transform: uppercase;
-  transition:
-    box-shadow 0.25s ease,
-    color 0.25s ease;
+  transition: var(--transition-shadow), var(--transition-color);
 }
 
 .cta-btn--primary {
   box-shadow:
     0 0 0 0 var(--accent-primary) inset,
-    0.2em 0.15em 0 0 var(--shadow-color);
+    0.2em 0.15em 0 0 var(--btn-shadow);
   transition:
-    box-shadow 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+    var(--transition-transform), var(--transition-shadow),
+    var(--transition-color);
 }
 
 /* Rules */
@@ -246,7 +236,7 @@ hr {
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 0.25s ease-out;
+  transition: transform 0.25s cubic-bezier(0.77, 0, 0.18, 1);
   margin: 0;
   z-index: -10;
 }
@@ -388,16 +378,23 @@ ul#menu li {
 /* === Major Animations === */
 
 @media (hover: hover) {
-  .cta-btn--primary:hover {
-    box-shadow:
-      0 4em 0 0 var(--accent-primary) inset,
-      0em 0em 0 0 var(--shadow-color);
-    transform: translate(0.2em, 0.15em);
-    color: var(--text-inverse);
+  .cta-btn--wrap:hover {
+    .cta-btn--primary {
+      box-shadow:
+        0 4em 0 0 var(--accent-primary) inset,
+        0em 0em 0 0 var(--btn-shadow);
+      transform: translate(0.2em, 0.15em);
+      color: var(--text-inverse);
+      transition:
+        var(--transition-transform), var(--transition-shadow),
+        var(--transition-color);
+    }
   }
-
   .cta-btn:hover {
     box-shadow: 0 4em 0 0 var(--accent-primary) inset;
     color: var(--text-inverse);
+    transition:
+      var(--transition-transform), var(--transition-shadow),
+      var(--transition-color);
   }
 }
