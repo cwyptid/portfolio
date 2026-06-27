@@ -20,6 +20,7 @@
   --project-bg: #fff;
   --tag-highlight: #eef8f5;
   --project-tag-text: #242424;
+  --focus-visible-carousel: #11a677;
   --card-shadow: rgba(0, 0, 0, 0.1);
 
   /* SVG paths for light theme */
@@ -73,6 +74,7 @@
   --hamburger-color: #fff;
   --project-bg: #2d2d2d;
   --project-tag-text: #242424;
+  --focus-visible-carousel: #fff;
   --card-shadow: rgba(0, 0, 0, 0.4);
 
   /* SVG path for dark theme */
@@ -146,6 +148,19 @@ a {
 
   &.backlink {
     font-size: var(--font-a-small);
+
+    &::before {
+      content: " \2190 ";
+      display: inline-block;
+      transition: var(--transition-transform);
+      margin-right: 0.5rem;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 5px;
   }
 }
 
@@ -162,7 +177,6 @@ section > ul > li {
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  outline: none;
   padding: 8px;
   vertical-align: middle;
   transition: var(--transition-transform);
@@ -174,6 +188,12 @@ section > ul > li {
 
   &:active {
     transform: scale(0.95);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 5px;
   }
 }
 
@@ -198,6 +218,12 @@ h1 .theme-toggle-icon {
   text-align: center;
   text-transform: uppercase;
   transition: var(--transition-shadow), var(--transition-color);
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 5px;
+  }
 }
 
 .cta-btn--primary {
@@ -289,6 +315,12 @@ ul#menu li {
   margin: 0 0 0 30px;
   cursor: pointer;
   z-index: 1;
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 5px;
+  }
 }
 
 #hamburger-btn span {
@@ -356,6 +388,27 @@ ul#menu li {
 
   .full-menu ul li {
     padding: 1em 2em;
+
+    & a {
+      display: inline-block;
+      position: relative;
+      padding: 0.2em 0.5em;
+      transition: 0.25s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: solid 1px transparent;
+        transform: skew(-20deg);
+        transition: border-color 0.25s ease;
+        border-radius: 5px;
+      }
+
+      &:hover::before {
+        border-color: var(--accent-primary);
+      }
+    }
   }
 }
 
@@ -396,5 +449,11 @@ ul#menu li {
     transition:
       var(--transition-transform), var(--transition-shadow),
       var(--transition-color);
+  }
+
+  .backlink:hover {
+    &::before {
+      transform: translateX(-15%);
+    }
   }
 }

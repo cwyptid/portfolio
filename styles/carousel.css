@@ -69,21 +69,25 @@
   background: none;
   border: none;
   overflow: hidden;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-inline: 25px;
+
+  :active {
+    transform: scale(0.86);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 5px;
+  }
+
+  &:hover .icon-svg {
+    color: var(--text-primary);
+  }
 }
 
 .carousel-control-btn:hover .icon-svg {
   color: var(--text-primary);
-}
-
-.carousel-control-btn:active {
-  transform: scale(0.86);
-}
-
-.carousel-control-btn:focus-visible {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
 }
 
 .carousel-control-icon {
@@ -195,8 +199,7 @@
   transform-origin: center;
   transition:
     var(--transition-transform),
-    filter 0.5s cubic-bezier(0.59, 2.3, 0.62, 0.69),
-    outline-color 0.25s cubic-bezier(0.59, 2.3, 0.62, 0.69);
+    filter 0.5s ease;
 }
 
 .carousel-button[aria-pressed="true"] {
@@ -206,6 +209,17 @@
 
 .carousel-button:not([aria-pressed="true"]) {
   filter: grayscale(90%) opacity(0.5);
+
+  &:focus-visible {
+    outline: 2px solid var(--focus-visible-carousel);
+    outline-offset: 5px;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    filter: none;
+    transition: filter 0.25s ease;
+  }
 }
 
 .thumbnail {

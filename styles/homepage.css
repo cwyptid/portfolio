@@ -42,7 +42,7 @@ footer > h2 {
 
 #contact a {
   text-decoration: underline;
-  transition: text-decoration-color 0.1s ease;
+  transition: all 0.25s ease-in-out;
 
   &:hover {
     text-decoration-color: transparent;
@@ -85,7 +85,6 @@ footer > h2 {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  outline: none;
   padding: 0.3em 0.8em;
   display: inline-block;
   border-radius: 5px;
@@ -96,6 +95,12 @@ footer > h2 {
   transition:
     var(--transition-transform), var(--transition-shadow),
     var(--transition-color);
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 5px;
+  }
 }
 
 .big-btn--wrapper {
@@ -123,6 +128,11 @@ footer > h2 {
     border-radius: 5px;
     height: 100%;
     transition: 0.25s cubic-bezier(0.59, 2.3, 0.62, 0.69);
+
+    &:has(> a:focus-visible) {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 4px;
+    }
 
     a {
       display: flex;
