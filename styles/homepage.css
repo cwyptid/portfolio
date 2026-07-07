@@ -88,7 +88,7 @@ footer > h2 {
   padding: 0.3em 0.8em;
   display: inline-block;
   border-radius: 5px;
-  border: 0.05em solid var(--border-color);
+  border: 3px solid var(--border-color);
   box-shadow:
     0 0 0 0 var(--accent-primary) inset,
     0.2em 0.15em 0 0 var(--btn-shadow);
