@@ -150,10 +150,15 @@ a {
     font-size: var(--font-a-small);
 
     &::before {
-      content: " \2190 ";
+      content: "\21FD";
       display: inline-block;
       transition: var(--transition-transform);
-      margin-right: 0.5rem;
+      vertical-align: middle;
+      margin-right: 0.25rem;
+    }
+
+    &:hover::before {
+      transform: translateX(-2px);
     }
   }
 
