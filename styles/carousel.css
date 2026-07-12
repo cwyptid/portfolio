@@ -109,17 +109,6 @@
   transition:
     transform 0.5s,
     opacity 0.5s;
-  transition-timing-function: linear(
-    0,
-    0.027 2.8%,
-    0.107 6%,
-    0.557 18.2%,
-    0.747 24.4%,
-    0.878 30.4%,
-    0.962 36.6%,
-    1.027 51.6%,
-    1
-  );
 }
 
 [class$="-double"] {
@@ -205,7 +194,7 @@
 .carousel-button[aria-pressed="true"] {
   outline-color: var(--accent-primary);
   transform: initial;
-  border-radius: 5px;
+  border-radius: 2.5px;
 }
 
 .carousel-button:not([aria-pressed="true"]) {
@@ -214,7 +203,7 @@
   &:focus-visible {
     outline: 1.5px solid var(--focus-visible-carousel);
     outline-offset: 5px;
-    border-radius: 5px;
+    border-radius: 2.5px;
   }
 
   &:hover {
@@ -238,5 +227,21 @@
 @container navigation (max-width: 662px) {
   .carousel-nav-scroll-container {
     --visible-items: 3;
+  }
+}
+
+@media (hover: hover) {
+  .icon-svg {
+    transition-timing-function: linear(
+      0,
+      0.027 2.8%,
+      0.107 6%,
+      0.557 18.2%,
+      0.747 24.4%,
+      0.878 30.4%,
+      0.962 36.6%,
+      1.027 51.6%,
+      1
+    );
   }
 }

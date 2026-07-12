@@ -13,8 +13,8 @@ h2 {
   font-size: var(--font-h2);
   padding: 0.5em;
   margin: 2em 1em;
-  border-top: 2px solid var(--border-color);
-  border-bottom: 2px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 h2.section-header {
@@ -24,16 +24,12 @@ h2.section-header {
 p {
   font-size: var(--font-body-reg);
   color: var(--text-secondary);
-  padding: 0.75em 1.5em;
-  line-height: 1.5;
+  padding: 0.5em 1.5em;
+  line-height: 1.35;
 }
 
 footer {
   margin-bottom: 5rem;
-}
-
-footer > h2 {
-  margin-bottom: 1em;
 }
 
 #contact {
@@ -43,6 +39,9 @@ footer > h2 {
 #contact a {
   text-decoration: underline;
   transition: all 0.25s ease-in-out;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: auto;
+  text-decoration-offset: 20px;
 
   &:hover {
     text-decoration-color: transparent;
@@ -87,8 +86,8 @@ footer > h2 {
   text-transform: uppercase;
   padding: 0.3em 0.8em;
   display: inline-block;
-  border-radius: 5px;
   border: 3px solid var(--border-color);
+  border-radius: 5px;
   box-shadow:
     0 0 0 0 var(--accent-primary) inset,
     0.2em 0.15em 0 0 var(--btn-shadow);
