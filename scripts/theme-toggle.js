@@ -1,99 +1,67 @@
 (function () {
-  // Preload SVG images to prevent flash on first toggle
-  const preloadImages = [
-    "./images/hithere.svg",
-    "./images/hithere-dark.svg",
-    "./images/web-bg.svg",
-    "./images/web-bg-dark.svg",
-  ];
+  const preloadImages = ["./images/web-bg.svg", "./images/web-bg-dark.svg"];
 
   preloadImages.forEach((src) => {
     const img = new Image();
     img.src = src;
   });
 
-  // Get all theme toggle buttons (by ID and class)
-  const themeToggleButtons = [
-    document.getElementById("theme-toggle"),
-    document.getElementById("theme-toggle-mobile"),
-    ...document.querySelectorAll(".theme-toggle-btn"),
-  ].filter(Boolean); // Remove null/undefined entries
+  const themeToggleButton = document.getElementById("theme-toggle");
+  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const storedTheme = localStorage.getItem("theme");
+  const currentTheme =
+    storedTheme || (darkModeMediaQuery.matches ? "dark" : "light");
 
-  // Get the current theme from localStorage or default to 'light'
-  const currentTheme = localStorage.getItem("theme") || "light";
-
-  // Apply the saved theme on page load
   if (currentTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
-    updateButtonText(true);
+    updateButtonState(true);
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+    updateButtonState(false);
   }
 
-  /**
-   * Toggle the theme between light and dark
-   */
   function toggleTheme(event) {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-    // Apply the new theme
     document.documentElement.setAttribute("data-theme", newTheme);
-
-    // Save to localStorage
     localStorage.setItem("theme", newTheme);
+    updateButtonState(newTheme === "dark");
 
-    // Update button text
-    updateButtonText(newTheme === "dark");
-
-    // Remove focus from button to prevent "stuck" appearance on mobile
-    if (event && event.currentTarget) {
+    // Remove focus from button to prevent "stuck" appearance on mobile taps.
+    // event.detail === 0 means the click came from the keyboard (or was
+    // dispatched programmatically), so we leave focus-visible alone there.
+    if (event && event.currentTarget && event.detail !== 0) {
       event.currentTarget.blur();
     }
   }
 
-  /**
-   * Update button text/icon based on current theme
-   * @param {boolean} isDark - Whether dark mode is active
-   */
-  function updateButtonText(isDark) {
-    themeToggleButtons.forEach((button) => {
-      if (button) {
-        // Check if it's a text button or icon button
-        if (button.classList.contains("theme-toggle-icon")) {
-          // Find the Font Awesome icon inside the button
-          const icon = button.querySelector("i");
-          if (icon) {
-            // Toggle between solid (on) and regular (off) lightbulb
-            if (isDark) {
-              icon.classList.remove("fa-solid");
-              icon.classList.add("fa-regular");
-              button.style.opacity = "0.6";
-            } else {
-              icon.classList.remove("fa-regular");
-              icon.classList.add("fa-solid");
-              button.style.opacity = "1";
-            }
-          }
-          button.title = isDark ? "Lights on?" : "Lights off?";
-        }
+  function updateButtonState(isDark) {
+    if (!themeToggleButton) return;
+
+    const icon = themeToggleButton.querySelector("i");
+    if (icon) {
+      if (isDark) {
+        icon.classList.remove("fa-solid");
+        icon.classList.add("fa-regular");
+      } else {
+        icon.classList.remove("fa-regular");
+        icon.classList.add("fa-solid");
       }
-    });
+    }
+    themeToggleButton.title = isDark ? "Lights on?" : "Lights off?";
+    themeToggleButton.setAttribute("aria-pressed", String(isDark));
   }
 
-  // Add click event listener to all theme toggle buttons
-  themeToggleButtons.forEach((button) => {
-    if (button) {
-      button.addEventListener("click", toggleTheme);
-    }
-  });
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener("click", toggleTheme);
+  }
 
-  // Optional: Listen for system theme preference changes
-  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  darkModeMediaQuery.addListener((e) => {
-    // Only apply system preference if user hasn't manually set a theme
+  darkModeMediaQuery.addEventListener("change", (e) => {
     if (!localStorage.getItem("theme")) {
       const newTheme = e.matches ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", newTheme);
-      updateButtonText(e.matches);
+      updateButtonState(e.matches);
     }
   });
 })();

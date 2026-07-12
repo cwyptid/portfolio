@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -16,12 +17,15 @@
       gtag("config", "G-K0YSKX7YRC");
     </script>
     <script>
-      if (localStorage.getItem("theme") === "dark") {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
     <!-- Document basics -->
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO -->
     <meta
@@ -32,59 +36,61 @@
     <link rel="canonical" href="https://www.erinlamp.com/" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content=":_) | Erin Lamp" />
+    <meta property="og:title" content=":_) | Erin Lampert" />
     <meta
       property="og:description"
       content="Erin Lampert is a designer, artist, and developer based in northeast Ohio making things for the internet."
     />
     <meta property="og:url" content="https://www.erinlamp.com/" />
 
-    <title>:_) | Erin Lamp</title>
+    <title>:_) | Erin Lampert</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
     <!-- Stylesheets -->
     <link href="./styles/roots.css" rel="stylesheet" type="text/css" />
     <link href="./styles/homepage.css" rel="stylesheet" type="text/css" />
     <link href="./styles/carousel.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
-    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
   <body>
-    <main>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-head">
+      <a class="logo" href="./" aria-label="Erin Lampert — home">:_)</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#illustrations">Illustrations</a>
+        <a href="#contact">Say howdy</a>
+        <button
+          class="bulb-toggle theme-toggle-icon"
+          id="theme-toggle"
+          aria-pressed="false"
+        >
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <span>Lights</span>
+        </button>
+      </nav>
+    </header>
+    <main id="main-content">
       <section id="intro">
-        <aside id="intro-glyphic">
-          <div class="hithere"></div>
-        </aside>
-        <section id="intro-bio">
-          <h1>
-            <button
-              id="theme-toggle"
-              class="theme-toggle-icon"
-              aria-label="Toggle theme"
-            >
-              <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            </button>
-            Hello World :_)
-          </h1>
-          <div class="p-wrapper prompt">
-            <p>> Welcome to my humble corner of the web.</p>
-            <p>
-              > I'm Erin Lampert. Designer, artist, and developer based in
-              northeast Ohio. I make things on the internet that bleed into the
-              real world sometimes.
-            </p>
-            <p>
-              > Feel free to look around at my work. I hope you enjoy your stay!
-            </p>
-          </div>
-        </section>
-        <aside class="big-btn--wrapper">
-          <div class="big-btn--hover-wrap">
-            <a href="./about" class="big-btn">About Me</a>
-          </div>
-        </aside>
+        <h1>I make small, <em>sincere</em> things for the internet.</h1>
+        <p class="lede">
+          Welcome to my humble corner of the web. I'm Erin Lampert — designer,
+          artist, and developer based in northeast Ohio. Hope you enjoy your
+          stay!
+        </p>
+        <div class="big-btn--hover-wrap">
+          <a href="./about" class="big-btn">About me</a>
+        </div>
       </section>
       <section id="projects">
         <h2>Projects</h2>
@@ -123,9 +129,9 @@
                 <div class="project-desc">
                   <h3 class="project-title">A Game About Snails</h3>
                   <p class="project-about">
-                    A short Javascript game about a snail and it's shell. More
-                    of a talking simulator, really. (Yes snails can talk, get
-                    with the program.)
+                    A short JavaScript game about a snail and its shell. More of
+                    a talking simulator, really. (Yes snails can talk, get with
+                    the program.)
                   </p>
                   <ul class="project-tags">
                     <li class="project-tag">Visual Novel</li>
@@ -137,9 +143,10 @@
         </div>
       </section>
       <section id="illustrations">
-        <h2 class="section-header">Illustrations</h2>
-        <p class="text-center">
-          I like to draw simple things and even make them move sometimes.
+        <h2>Illustrations</h2>
+        <p>
+          I like to draw simple things and even make them move sometimes. Feel
+          free to have a look.
         </p>
         <section class="carousel-wrapper" aria-label="Illustrations">
           <div class="carousel-nav">
@@ -194,13 +201,29 @@
       </section>
     </main>
     <footer>
-      <h2 class="section-header">Say Howdy</h2>
+      <h2>Thanks for stopping by</h2>
       <p id="contact">
-        Thanks for stopping by. You can reach me at
-        <a href="mailto:possiblybmo@gmail.com">possiblybmo@gmail.com</a>.
+        Say howdy! You can reach me at
+        <a href="mailto:erin@erinlamp.com">erin@erinlamp.com</a> if you need.
       </p>
     </footer>
-    <script src="./scripts/prompt.js"></script>
+    <div class="page-end" aria-hidden="true">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path
+          d="M4 40 Q 18 26 32 40 T 60 40"
+          stroke="var(--accent-primary)"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M4 24 Q 18 10 32 24 T 60 24"
+          stroke="var(--accent-primary)"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity="0.45"
+        />
+      </svg>
+    </div>
     <script src="./scripts/theme-toggle.js"></script>
     <script src="./scripts/carousel.js"></script>
   </body>

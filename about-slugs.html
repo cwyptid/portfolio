@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -16,64 +17,49 @@
       gtag("config", "G-K0YSKX7YRC");
     </script>
     <script>
-      if (localStorage.getItem("theme") === "dark") {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About A Game About Slugs | Erin Lamp</title>
+    <meta name="robots" content="noindex" />
+    <title>About A Game About Slugs | Erin Lampert</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link href="./styles/roots.css" rel="stylesheet" type="text/css" />
     <link href="./styles/slugsabout.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
   </head>
   <body>
-    <header>
-      <!-- Mobile hamburger -->
-      <nav id="menuToggle">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-head">
+      <a class="logo" href="./" aria-label="Erin Lampert — home">:_)</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./">Home</a>
         <button
-          id="hamburger-btn"
-          aria-expanded="false"
-          aria-controls="menu"
-          aria-label="Toggle navigation"
+          class="bulb-toggle theme-toggle-icon"
+          id="theme-toggle"
+          aria-pressed="false"
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <span>Lights</span>
         </button>
-        <ul id="menu">
-          <li><a href="./">Home</a></li>
-          <li>
-            <button
-              class="theme-toggle-btn theme-toggle-icon"
-              aria-label="Toggle theme"
-            >
-              <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <!-- Desktop nav -->
-      <nav class="full-menu">
-        <ul>
-          <li><a href="./">Home</a></li>
-          <li class="nav-end">
-            <button
-              id="theme-toggle"
-              class="theme-toggle-icon"
-            >
-              <i class="fa-solid fa-lightbulb"></i>
-            </button>
-          </li>
-        </ul>
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       <p><a class="backlink" href="./slugs">back to project home</a></p>
       <h1>A Game About Slugs</h1>
       <p class="subtitle">note from the developer</p>
@@ -186,7 +172,6 @@
       </p>
       <hr class="bottom-rule" />
     </main>
+    <script src="./scripts/theme-toggle.js"></script>
   </body>
-  <script src="./scripts/theme-toggle.js"></script>
-  <script src="./scripts/menu.js"></script>
 </html>

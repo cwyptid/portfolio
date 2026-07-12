@@ -22,7 +22,7 @@ const IMAGES = [
   },
   {
     src: "./images/illustrations/prince.gif",
-    alt: "Ralsei from Deltarunel; looping gif illustration",
+    alt: "Ralsei from Deltarune; looping gif illustration",
     natural: true,
   },
   {

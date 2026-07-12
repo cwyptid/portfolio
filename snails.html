@@ -1,5 +1,7 @@
+<!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -15,61 +17,49 @@
       gtag("config", "G-K0YSKX7YRC");
     </script>
     <script>
-      if (localStorage.getItem("theme") === "dark") {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A Game About Snails | Erin Lamp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>A Game About Snails | Erin Lampert</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link href="./styles/roots.css" rel="stylesheet" type="text/css" />
     <link href="./styles/subpage.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
-    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
   <body>
-    <header>
-      <!-- Mobile hamburger -->
-      <nav id="menuToggle">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-head">
+      <a class="logo" href="./" aria-label="Erin Lampert — home">:_)</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./">Home</a>
         <button
-          id="hamburger-btn"
-          aria-expanded="false"
-          aria-controls="menu"
-          aria-label="Toggle navigation"
+          class="bulb-toggle theme-toggle-icon"
+          id="theme-toggle"
+          aria-pressed="false"
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <span>Lights</span>
         </button>
-        <ul id="menu">
-          <li><a href="./">Home</a></li>
-          <li>
-            <button
-              class="theme-toggle-btn theme-toggle-icon"
-              aria-label="Toggle theme"
-            >
-              <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <!-- Desktop nav -->
-      <nav class="full-menu">
-        <ul>
-          <li><a href="./">Home</a></li>
-          <li class="nav-end">
-            <button id="theme-toggle" class="theme-toggle-icon">
-              <i class="fa-solid fa-lightbulb"></i>
-            </button>
-          </li>
-        </ul>
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       <section class="index_sidebar">
         <h1>A Game About Snails</h1>
         <hr />
@@ -85,6 +75,7 @@
             class="cta-btn cta-btn--primary"
             href="https://cwyptid.github.io/snails/"
             target="_blank"
+            rel="noopener noreferrer"
             >Play the full game</a
           >
         </div>
@@ -120,13 +111,13 @@
         <a class="backlink" href="./">back to projects</a>
       </section>
       <aside class="index-body">
-        <div class="col-half">
+        <div class="col-half is-transparent">
           <img
             src="./images/snails/titlescreen.gif"
             alt="A Game About Snails title screen"
           />
         </div>
-        <div class="col-half">
+        <div class="col-half is-transparent">
           <img
             src="./images/snails/talking_waving.gif"
             alt="Slime Tony's talking animation"
@@ -135,6 +126,5 @@
       </aside>
     </main>
     <script src="./scripts/theme-toggle.js"></script>
-    <script src="./scripts/menu.js"></script>
   </body>
 </html>

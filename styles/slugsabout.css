@@ -1,6 +1,9 @@
 /* Main */
 h1 {
-  font-size: var(--font-h1-main);
+  font-size: var(--font-h1-sub);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
 }
 
 h2 {
@@ -10,7 +13,7 @@ h2 {
 }
 
 p {
-  font-size: var(--font-body-special);
+  font-size: var(--font-body-base);
   padding: 0;
   line-height: 1.8;
   margin: 0.875rem 0;
@@ -21,10 +24,11 @@ hr + h2 {
 }
 
 main {
-  display: block;
   max-width: 680px;
-  margin: auto;
-  padding: 2rem 1.5rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: block;
+  padding-block: 2rem;
 }
 
 hr {
@@ -35,14 +39,11 @@ hr {
   font-size: var(--font-subtitle);
 }
 
-a.backlink {
-  font-size: var(--font-a-special);
-}
-
 .subtitle,
 .backlink {
   letter-spacing: 0.5px;
 }
+
 @media screen and (min-width: 650px) {
   p {
     line-height: 2;

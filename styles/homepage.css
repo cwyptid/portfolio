@@ -1,110 +1,106 @@
-/* Main  */
-h1,
-h2 {
-  text-align: center;
-}
-
-h1 {
-  font-size: var(--font-h1-main);
-  padding: 1.5em 0 0.5em;
+main,
+footer {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 h2 {
   font-size: var(--font-h2);
-  padding: 0.5em;
-  margin: 2em 1em;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-h2.section-header {
-  margin-bottom: 2rem;
-}
-
-p {
-  font-size: var(--font-body-reg);
-  color: var(--text-secondary);
-  padding: 0.5em 1.5em;
-  line-height: 1.35;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 2rem;
 }
 
 footer {
-  margin-bottom: 5rem;
+  padding-block: var(--space-section) clamp(2.5rem, 2rem + 2vw, 4rem);
+  margin-bottom: 0;
+}
+
+.page-end {
+  display: flex;
+  justify-content: center;
+  padding-block: 1rem clamp(3rem, 2rem + 4vw, 5rem);
+
+  svg {
+    width: 64px;
+    height: auto;
+    opacity: 0.7;
+  }
 }
 
 #contact {
-  text-align: center;
+  font-size: var(--font-body-base);
+  line-height: 1.55;
+  color: var(--text-secondary);
 }
 
 #contact a {
-  text-decoration: underline;
-  transition: all 0.25s ease-in-out;
-  text-decoration-thickness: 1px;
-  text-decoration-skip-ink: auto;
-  text-decoration-offset: 20px;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.45s ease;
 
-  &:hover {
-    text-decoration-color: transparent;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.3em;
+    height: 3px;
+    background-image: var(--squiggle-underline);
+    background-repeat: repeat-x;
+    background-size: 6px 3px;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: var(--transition-underline);
   }
 }
 
-.hithere {
-  content: var(--svg-hithere);
-  width: 100%;
-  height: auto;
-  max-width: 300px;
-  display: block;
-  margin: auto;
-  padding-top: 5rem;
+/* Hero */
+#intro {
+  position: relative;
+  padding-block: clamp(4rem, 3rem + 7vw, 8rem) var(--space-section);
+}
+
+#intro h1 {
+  font-size: var(--font-h1-hero);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem;
+  max-width: 16ch;
+}
+
+#intro h1 em {
+  position: relative;
+  font-style: italic;
+  color: var(--accent-primary);
+}
+
+#intro h1 em::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(14rem, 40vw, 26rem);
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle at center,
+    var(--glow-accent) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: -1;
   transition: var(--transition-theme-opacity);
 }
 
-/* Typewriter JS script classes */
-.typewrite-output {
-  display: none;
-}
-
-.typewrite-active:after {
-  content: "|";
-}
-
-.p-wrapper > p {
-  text-wrap: wrap;
-}
-
-/* Buttons */
-.big-btn,
-.big-btn:link,
-.big-btn:visited {
-  font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
-  font-weight: bold;
-  font-size: var(--font-button-big);
-  color: var(--text-primary);
-  line-height: 1em;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 0.3em 0.8em;
-  display: inline-block;
-  border: 3px solid var(--border-color);
-  border-radius: 5px;
-  box-shadow:
-    0 0 0 0 var(--accent-primary) inset,
-    0.2em 0.15em 0 0 var(--btn-shadow);
-  transition:
-    var(--transition-transform), var(--transition-shadow),
-    var(--transition-color);
-
-  &:focus-visible {
-    outline: 2px solid var(--accent-primary);
-    outline-offset: 2px;
-    border-radius: 5px;
-  }
-}
-
-.big-btn--wrapper {
-  text-align: center;
-  margin: 2rem 0 0;
+.lede {
+  font-size: var(--font-body-base);
+  line-height: 1.55;
+  max-width: 46ch;
+  color: var(--text-secondary);
+  margin: 0 0 2.5rem;
 }
 
 .big-btn--hover-wrap {
@@ -113,24 +109,57 @@ footer {
   display: inline-block;
 }
 
+/* Buttons */
+.big-btn,
+.big-btn:link,
+.big-btn:visited {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--font-button-big);
+  color: var(--text-primary);
+  line-height: 1em;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.7em 1.5em;
+  display: inline-block;
+  border: 3px solid var(--border-color);
+  border-radius: 5px;
+  box-shadow:
+    0 0 0 0 var(--accent-primary) inset,
+    0.2em 0.15em 0 0 var(--btn-shadow);
+  transition: var(--transition-btn);
+
+  &:focus-visible {
+    outline: 2px dotted var(--accent-primary);
+    outline-offset: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 var(--focus-glow);
+  }
+}
+
 /* Projects  */
+#projects {
+  padding-block: 0 var(--space-section);
+}
+
 .projects-container {
   display: grid;
-  grid-gap: 4rem;
-  grid-template-columns: repeat(auto-fit, 350px);
-  justify-content: center;
+  grid-gap: clamp(1.25rem, 3vw, 2.25rem);
+  grid-template-columns: 1fr;
 
   .project-card {
     background-color: var(--project-bg);
-    box-shadow: 0 30px 40px var(--card-shadow);
+    box-shadow: 0 20px 32px var(--card-shadow);
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: var(--radius-card);
     height: 100%;
-    transition: 0.25s cubic-bezier(0.59, 2.3, 0.62, 0.69);
+    will-change: transform;
+    transition: transform 0.25s cubic-bezier(0.59, 2.3, 0.62, 0.69);
 
     &:has(> a:focus-visible) {
-      outline: 2px solid var(--accent-primary);
-      outline-offset: 4px;
+      outline: 2px dotted var(--accent-primary);
+      outline-offset: 6px;
+      box-shadow: 0 0 14px 0 var(--focus-glow);
     }
 
     a {
@@ -142,11 +171,11 @@ footer {
     .project-thumbnail {
       height: 200px;
       overflow: hidden;
-      object-fit: cover;
 
       img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
         transition: 0.25s ease;
       }
     }
@@ -159,6 +188,8 @@ footer {
 
       .project-title {
         font-size: var(--font-h3);
+        font-weight: 800;
+        line-height: 1.15;
         color: var(--text-primary);
         border-bottom: 1px solid var(--border-color);
         padding: 0 0 0.625em 0;
@@ -166,17 +197,20 @@ footer {
 
       .project-about {
         font-size: var(--font-card-body);
-        padding: 1em 0;
+        line-height: 1.55;
+        color: var(--text-secondary);
+        margin: 0.625em 0 1.1em;
         flex-grow: 1;
       }
 
       .project-tag {
         font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
-        font-size: var(--font-body-small);
+        font-size: 1.2rem;
         color: var(--text-inverse);
         background-color: var(--accent-primary);
         padding: 0.25em 0.85em;
         border-radius: 2em;
+        letter-spacing: 0.02em;
         line-height: 1.4;
         text-transform: uppercase;
         list-style-type: none;
@@ -186,89 +220,20 @@ footer {
     }
   }
 }
-/* === Tablet: 650px+  === */
+
+/* Illustrations */
+#illustrations > p {
+  font-size: var(--font-body-base);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0 0 2rem;
+}
+
+/* === Tablet: 650px+ === */
 
 @media screen and (min-width: 650px) {
-  h1 {
-    padding: 0;
-    margin-top: 1.5em;
-  }
-
-  .p-wrapper {
-    text-align: left;
-    padding: 2em 7em 0;
-  }
-
-  .p-wrapper > p {
-    display: inline-block;
-    text-align: left;
-  }
-
-  .hithere {
-    padding-top: 8rem;
-  }
-}
-
-/* === Desktop: 1000px+ === */
-
-@media screen and (min-width: 1000px) {
-  h1 {
-    margin-top: 0;
-    text-align: left;
-  }
-
-  h2 {
-    margin: 2em;
-  }
-
-  #intro {
-    display: grid;
+  .projects-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "icon bio"
-      "btn  bio ";
-    padding-top: 6rem;
-    column-gap: 3rem;
-    justify-content: center;
-  }
-
-  #intro-glyphic {
-    grid-column: span auto;
-    grid-area: icon;
-    justify-self: center;
-    align-self: end;
-    width: 100%;
-  }
-
-  #intro-bio {
-    grid-area: bio;
-    max-width: 775px;
-    justify-self: start;
-  }
-
-  .btn-wrapper {
-    grid-area: btn;
-  }
-
-  .p-wrapper {
-    text-align: left;
-    margin-top: 4em;
-    padding: 0;
-  }
-
-  .p-wrapper > p {
-    padding-left: 0;
-  }
-
-  .hithere {
-    max-width: 400px;
-    padding-top: 0;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .hithere {
-    max-width: 500px;
   }
 }
 
@@ -278,7 +243,7 @@ footer {
   .big-btn--hover-wrap:hover {
     .big-btn {
       box-shadow:
-        0 2em 0 0 var(--accent-primary) inset,
+        0 3em 0 0 var(--accent-primary) inset,
         0 0 0 0 var(--btn-shadow);
       transform: translate(0.2em, 0.1em);
       color: var(--text-inverse);
@@ -296,5 +261,31 @@ footer {
       background-color: var(--tag-highlight);
       color: var(--project-tag-text);
     }
+  }
+
+  #contact a:hover::after {
+    transform: scaleX(0);
+  }
+}
+
+/* Higher specificity than the hover rule above so the press state actually
+   shows while hovering-then-clicking (the normal desktop click sequence) */
+.big-btn--hover-wrap:active .big-btn {
+  box-shadow:
+    0 3em 0 0 var(--accent-primary) inset,
+    0 0 0 0 var(--btn-shadow);
+  transform: translate(0.2em, 0.15em) scale(0.97);
+  color: var(--text-inverse);
+  transition-duration: 0.08s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .big-btn--hover-wrap:hover .big-btn,
+  .project-card-wrapper:hover .project-card {
+    transform: none;
+  }
+
+  #contact a::after {
+    transition: none;
   }
 }

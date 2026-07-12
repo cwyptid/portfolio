@@ -1,19 +1,27 @@
 /* Main  */
 h1 {
-  color: var(--text-primary);
+  font-weight: 800;
+  line-height: 1.05;
   font-size: var(--font-h1-sub);
   margin-top: 1.5625rem;
   margin-bottom: 1.25rem;
 }
 
 h2 {
+  font-weight: 800;
+  line-height: 1.15;
   font-size: var(--font-h2-sub);
   margin-bottom: 0;
   margin-top: 0;
 }
 
+p,
+.index_sidebar ul li {
+  font-size: clamp(1rem, 0.95rem + 0.15vw, 1.1rem);
+  line-height: 1.15;
+}
+
 p {
-  font-size: var(--font-body-small);
   margin: 0.313em 0;
 }
 
@@ -40,11 +48,16 @@ main {
   padding-top: 0;
 }
 
+.index_sidebar hr {
+  margin: 1.4rem 0;
+}
+
 .index-body {
   width: 100%;
   margin-left: 0;
   padding-top: 1rem;
   justify-items: center;
+  align-items: start;
   align-content: center;
 }
 
@@ -53,11 +66,24 @@ main {
 }
 
 /* Project images */
+.index-body > div {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 28px var(--card-shadow);
+  margin-bottom: 1.25rem;
+}
+
+/* For sprites/gifs with transparent backgrounds — no frame to break the illusion */
+.index-body > div.is-transparent {
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+}
+
 .index-body img,
 .index-body video {
   display: block;
   width: 100%;
-  margin-bottom: 1rem;
   margin-inline: auto;
 }
 
@@ -71,6 +97,11 @@ main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: min-content;
+    gap: 1.25rem;
+  }
+
+  .index-body > div {
+    margin-bottom: 0;
   }
 
   .col-full {

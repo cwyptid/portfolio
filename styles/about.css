@@ -1,79 +1,89 @@
 h1 {
-  font-size: var(--font-h1-main);
-  padding: 0 0 0.3em;
-  text-align: left;
+  font-size: var(--font-h1-about);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
 }
 
 p {
-  font-size: var(--font-body-reg);
+  font-size: var(--font-body-base);
+  line-height: 1.55;
   color: var(--text-secondary);
-  padding: 0.35em 0;
-  line-height: 1.35;
+  max-width: 52ch;
+  margin: 0 0 1.1rem;
 }
 
 .about-bio {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem 2rem 2rem;
-  max-width: 640px;
-  margin: 0 auto;
+  gap: 2.5rem;
+  padding-block: clamp(2.5rem, 2rem + 4vw, 5.5rem);
+}
+
+.bio-img {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.bio-img::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background: radial-gradient(
+    circle at center,
+    var(--glow-accent) 0%,
+    transparent 62%
+  );
+  pointer-events: none;
+  z-index: -1;
+  transition: var(--transition-theme-opacity);
 }
 
 .me-illustration {
+  position: relative;
   width: 100%;
-  max-width: 480px;
   height: auto;
+  display: block;
 }
 
 .bio-text {
   width: 100%;
-  p {
-    padding-top: 1rem;
-  }
 }
 
-a.backlink {
-  font-size: var(--font-a-reg);
-}
-
-/* ---- Pills ---- */
+/* ---- Eyebrow ---- */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6em;
-  padding: 0.5em 0 0;
-  justify-content: center;
-  margin-bottom: 1rem;
+  padding: 0;
+  margin: 0 0 1.75rem;
 }
 
 .tag {
-  font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
-  font-weight: bold;
-  font-size: var(--font-tag);
-  background-color: var(--accent-primary);
-  color: var(--text-inverse);
-  padding: 0.25em 0.85em;
-  border-radius: 2em;
-  line-height: 1.4;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--accent-primary);
+  line-height: 1.4;
   list-style-type: none;
 }
 
-/* === Tablet: 650px+ === */
-
-@media screen and (min-width: 650px) {
-  .about-bio {
-    padding: 4rem 3rem 2rem;
-  }
-
-  .me-illustration {
-    max-width: 600px;
-  }
+.tag:not(:last-child)::after {
+  content: "\00b7";
+  display: inline-block;
+  margin: 0 0.6em;
+  color: var(--text-secondary);
+  letter-spacing: normal;
 }
 
-/* === Desktop: 1000px+ — half/half split layout === */
+/* === Desktop: 1000px+ — side-by-side layout === */
 @media screen and (min-width: 1000px) {
   main {
     display: block;
@@ -81,29 +91,17 @@ a.backlink {
   }
 
   .about-bio {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 4rem;
-    padding: 5rem 3rem 2rem;
-    max-width: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
   }
 
   .bio-img {
-    grid-column: span 3;
-    min-width: 0;
-    align-self: start;
-  }
-
-  .me-illustration {
-    max-width: 800px;
+    flex: 0 1 520px;
   }
 
   .bio-text {
-    grid-column: span 3;
+    flex: 1;
     min-width: 0;
-  }
-
-  .tag-list {
-    justify-content: flex-start;
   }
 }

@@ -17,7 +17,7 @@
 .carousel-display {
   contain: content;
   content-visibility: auto;
-  border-radius: 5px;
+  border-radius: var(--radius-card);
   box-shadow: 0 30px 40px var(--card-shadow);
 }
 
@@ -58,7 +58,7 @@
 
 .carousel-control-btn-group {
   place-self: center;
-  gap: 1.5rem;
+  gap: 1rem;
   display: flex;
 }
 
@@ -76,18 +76,11 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--accent-primary);
-    outline-offset: 2px;
+    outline: 2px dotted var(--accent-primary);
+    outline-offset: 5px;
     border-radius: 5px;
+    box-shadow: 0 0 10px 0 var(--focus-glow);
   }
-
-  &:hover .icon-svg {
-    color: var(--text-primary);
-  }
-}
-
-.carousel-control-btn:hover .icon-svg {
-  color: var(--text-primary);
 }
 
 .carousel-control-icon {
@@ -118,26 +111,6 @@
 
 .next .carousel-control-icon {
   flex-direction: row-reverse;
-}
-
-.next:hover .carousel-control-icon > .chevron-right {
-  transform: translateX(calc(100% + 0.25rem)) scale(0);
-  opacity: 0;
-}
-
-.next:hover .carousel-control-icon > .chevron-right-double {
-  transform: scale(1) translateX(calc(100% + 0.5rem));
-  opacity: 1;
-}
-
-.prev:hover .carousel-control-icon > .chevron-left {
-  transform: translateX(calc(-100% - 0.25rem)) scale(0);
-  opacity: 0;
-}
-
-.prev:hover .carousel-control-icon > .chevron-left-double {
-  transform: scale(1) translateX(calc(-100% - 0.5rem));
-  opacity: 1;
 }
 
 .carousel-track {
@@ -199,16 +172,13 @@
 
 .carousel-button:not([aria-pressed="true"]) {
   filter: grayscale(90%) opacity(0.5);
+  transition: filter 0.25s ease;
 
-  &:focus-visible {
+  &:focus-visible,
+  &:hover {
     outline: 1.5px solid var(--focus-visible-carousel);
     outline-offset: 5px;
     border-radius: 2.5px;
-  }
-
-  &:hover {
-    filter: none;
-    transition: filter 0.25s ease;
   }
 }
 
@@ -243,5 +213,40 @@
       1.027 51.6%,
       1
     );
+  }
+
+  .carousel-control-btn:hover .icon-svg {
+    color: var(--text-primary);
+  }
+
+  .next:hover .carousel-control-icon > .chevron-right {
+    transform: translateX(calc(100% + 0.25rem)) scale(0);
+    opacity: 0;
+  }
+
+  .next:hover .carousel-control-icon > .chevron-right-double {
+    transform: scale(1) translateX(calc(100% + 0.5rem));
+    opacity: 1;
+  }
+
+  .prev:hover .carousel-control-icon > .chevron-left {
+    transform: translateX(calc(-100% - 0.25rem)) scale(0);
+    opacity: 0;
+  }
+
+  .prev:hover .carousel-control-icon > .chevron-left-double {
+    transform: scale(1) translateX(calc(-100% - 0.5rem));
+    opacity: 1;
+  }
+
+  .carousel-button:not([aria-pressed="true"]):hover {
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-svg,
+  .carousel-button {
+    transition: none;
   }
 }
