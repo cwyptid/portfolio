@@ -2,7 +2,7 @@
 
 .carousel-wrapper {
   container: carouselWrapper / inline-size;
-  inline-size: clamp(22.5em, 96vw, 840px);
+  max-inline-size: 840px;
   display: grid;
   position: relative;
   grid-template-rows:
@@ -17,8 +17,9 @@
 .carousel-display {
   contain: content;
   content-visibility: auto;
+  border: 3px solid var(--border-color);
   border-radius: var(--radius-card);
-  box-shadow: 0 30px 40px var(--card-shadow);
+  box-shadow: 0.35em 0.3em 0 0 var(--accent-primary);
 }
 
 /* Default */

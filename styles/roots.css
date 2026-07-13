@@ -111,35 +111,40 @@ body {
   transition: var(--transition-theme-color);
 }
 
-body::before,
-body::after {
-  content: "";
+.web-bg {
   position: fixed;
   inset: 0;
-  background-size: 100vw clamp(200px, 28vw, 380px);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: right top;
   pointer-events: none;
   z-index: -1;
+  transform: translateZ(0);
+}
+
+.web-bg::before,
+.web-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: 100vw clamp(200px, 28vw, 380px);
+  background-repeat: no-repeat;
+  background-position: right top;
   transition: opacity 0.5s ease;
 }
 
-body::before {
+.web-bg::before {
   background-image: var(--svg-web-bg-light);
   opacity: 1;
 }
 
-body::after {
+.web-bg::after {
   background-image: var(--svg-web-bg-dark);
   opacity: 0;
 }
 
-[data-theme="dark"] body::before {
+[data-theme="dark"] .web-bg::before {
   opacity: 0;
 }
 
-[data-theme="dark"] body::after {
+[data-theme="dark"] .web-bg::after {
   opacity: 1;
 }
 

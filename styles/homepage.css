@@ -126,7 +126,7 @@ footer {
   border-radius: 5px;
   box-shadow:
     0 0 0 0 var(--accent-primary) inset,
-    0.2em 0.15em 0 0 var(--btn-shadow);
+    0.2em 0.15em 0 0 var(--accent-primary);
   transition: var(--transition-btn);
 
   &:focus-visible {
@@ -149,12 +149,15 @@ footer {
 
   .project-card {
     background-color: var(--project-bg);
-    box-shadow: 0 20px 32px var(--card-shadow);
+    border: 3px solid var(--border-color);
+    box-shadow: 0.35em 0.3em 0 0 var(--accent-primary);
     overflow: hidden;
     border-radius: var(--radius-card);
     height: 100%;
     will-change: transform;
-    transition: transform 0.25s cubic-bezier(0.59, 2.3, 0.62, 0.69);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
 
     &:has(> a:focus-visible) {
       outline: 2px dotted var(--accent-primary);
@@ -204,18 +207,29 @@ footer {
       }
 
       .project-tag {
+        position: relative;
         font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
         font-size: 1.2rem;
-        color: var(--text-inverse);
-        background-color: var(--accent-primary);
-        padding: 0.25em 0.85em;
-        border-radius: 2em;
+        color: var(--accent-primary);
         letter-spacing: 0.02em;
         line-height: 1.4;
         text-transform: uppercase;
         list-style-type: none;
         display: inline-block;
+        padding-bottom: 0.3em;
         transition: 0.25s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 3px;
+          background-image: var(--squiggle-underline);
+          background-repeat: repeat-x;
+          background-size: 6px 3px;
+        }
       }
     }
   }
@@ -252,14 +266,11 @@ footer {
 
   .project-card-wrapper:hover {
     .project-card {
-      transform: translateY(-10px);
+      transform: translate(0.35em, 0.3em);
+      box-shadow: 0 0 0 0 var(--accent-primary);
     }
     .project-thumbnail img {
       transform: scale(1.05);
-    }
-    .project-desc .project-tag {
-      background-color: var(--tag-highlight);
-      color: var(--project-tag-text);
     }
   }
 
