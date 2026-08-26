@@ -44,8 +44,41 @@ hr {
   letter-spacing: 0.5px;
 }
 
+.textlink {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.45s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.3em;
+    height: 3px;
+    background-image: var(--squiggle-underline);
+    background-repeat: repeat-x;
+    background-size: 6px 3px;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: var(--transition-underline);
+  }
+}
+
 @media screen and (min-width: 650px) {
   p {
     line-height: 2;
+  }
+}
+
+@media (hover: hover) {
+  .textlink:hover::after {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .textlink::after {
+    transition: none;
   }
 }
