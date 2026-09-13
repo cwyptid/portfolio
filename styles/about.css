@@ -67,6 +67,10 @@ h2 {
   display: block;
 }
 
+.me-illustration--ksu {
+  aspect-ratio: 931 / 1068;
+}
+
 .bio-text {
   width: 100%;
 }

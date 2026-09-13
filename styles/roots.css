@@ -148,6 +148,11 @@ body {
   opacity: 1;
 }
 
+[data-theme="dark"] .theme-light-only,
+:root:not([data-theme="dark"]) .theme-dark-only {
+  display: none;
+}
+
 ::selection {
   color: var(--highlight-text);
   background-color: var(--highlight-bg);
