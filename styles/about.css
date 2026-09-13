@@ -1,9 +1,15 @@
-h1 {
+main {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.page-title {
   font-size: var(--font-h1-about);
-  font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.01em;
   margin: 0 0 1rem;
+  padding-block-start: clamp(2.5rem, 2rem + 4vw, 5.5rem);
 }
 
 p {
@@ -14,15 +20,24 @@ p {
   margin: 0 0 1.1rem;
 }
 
-.about-bio {
-  max-width: var(--content-max);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
+h2 {
+  font-size: var(--font-h2);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+.about-bio,
+.about-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
   padding-block: clamp(2.5rem, 2rem + 4vw, 5.5rem);
+}
+
+.about-bio {
+  padding-block-start: 0;
 }
 
 .bio-img {
@@ -64,17 +79,6 @@ p {
   margin: 0 0 1.75rem;
 }
 
-.tag {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-primary);
-  line-height: 1.4;
-  list-style-type: none;
-}
-
 .tag:not(:last-child)::after {
   content: "\00b7";
   display: inline-block;
@@ -83,17 +87,35 @@ p {
   letter-spacing: normal;
 }
 
+.squiggle-divider {
+  width: min(180px, 40%);
+  height: 3px;
+  margin: 0 auto;
+  background-image: var(--squiggle-underline);
+  background-repeat: repeat-x;
+  background-size: 6px 3px;
+  border: none;
+}
+
 /* === Desktop: 1000px+ — side-by-side layout === */
 @media screen and (min-width: 1000px) {
-  main {
-    display: block;
-    padding-top: 0;
-  }
-
-  .about-bio {
+  .about-bio,
+  .about-section {
     flex-direction: row;
     align-items: center;
     gap: 0;
+  }
+
+  .about-section--flip {
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .about-section--flip .bio-img {
+    order: 2;
+  }
+
+  .about-section--flip .bio-text {
+    order: 1;
   }
 
   .bio-img {

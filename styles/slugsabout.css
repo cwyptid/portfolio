@@ -1,7 +1,6 @@
 /* Main */
 h1 {
   font-size: var(--font-h1-sub);
-  font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.01em;
 }

@@ -7,7 +7,6 @@ footer {
 
 h2 {
   font-size: var(--font-h2);
-  font-weight: 800;
   line-height: 1.1;
   margin: 0 0 2rem;
 }
@@ -64,7 +63,6 @@ footer {
 
 #intro h1 {
   font-size: var(--font-h1-hero);
-  font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.015em;
   margin: 0 0 1.25rem;
@@ -208,14 +206,6 @@ footer {
 
       .project-tag {
         position: relative;
-        font-family: tablet-gothic-compressed, "trumpgothicpro", sans-serif;
-        font-size: 1.2rem;
-        color: var(--accent-primary);
-        letter-spacing: 0.02em;
-        line-height: 1.4;
-        text-transform: uppercase;
-        list-style-type: none;
-        display: inline-block;
         padding-bottom: 0.3em;
         transition: 0.25s ease;
 

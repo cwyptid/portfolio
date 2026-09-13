@@ -1,6 +1,5 @@
 /* Main  */
 h1 {
-  font-weight: 800;
   line-height: 1.05;
   font-size: var(--font-h1-sub);
   margin-top: 1.5625rem;
@@ -8,7 +7,6 @@ h1 {
 }
 
 h2 {
-  font-weight: 800;
   line-height: 1.15;
   font-size: var(--font-h2-sub);
   margin-bottom: 0;
