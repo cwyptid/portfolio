@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>How A Game About Snails got made | Eddie Lampert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
+    <link href="./styles/roots.css" rel="stylesheet" type="text/css" />
+    <link href="./styles/process.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="process">
+    <div class="web-bg" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-head">
+      <a class="logo" href="./" aria-label="Eddie Lampert — home">:_)</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./">Home</a>
+        <button
+          class="bulb-toggle theme-toggle-icon"
+          id="theme-toggle"
+          aria-pressed="false"
+        >
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <span>Lights</span>
+        </button>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="proc-hero">
+        <div>
+          <p class="hero-back">
+            <a class="backlink" href="./snails">back to project home</a>
+          </p>
+          <h1>How A Game About Snails got made</h1>
+          <p class="lede">Version 1.0. The beginning of something bigger.</p>
+        </div>
+      </section>
+
+      <div class="with-toc">
+        <nav class="toc" aria-label="On this page">
+          <ol>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#tony">Designing Slime Tony</a></li>
+            <li><a href="#versions">Versions</a></li>
+            <li><a href="#structure">Scene structure</a></li>
+            <li><a href="#meaning">What it means to me</a></li>
+            <li><a href="#tools">Tools used</a></li>
+          </ol>
+        </nav>
+
+        <div>
+          <section class="proc-section" id="concept">
+            <h2>Concept</h2>
+            <p>
+              A small visual novel about snails, shells, and being true to
+              yourself.
+            </p>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="tony">
+            <h2>Designing Slime Tony</h2>
+            <p>
+              My first ever Slime Tony was a quick sketch I did in class, in MS
+              Paint, with my mouse. Then came the one I turned in for my final,
+              and a redesign in late 2023, right before I graduated.
+            </p>
+            <div class="figs figs--3">
+              <figure>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    class="on-white"
+                    src="./images/process/tony-2022-ms-paint.jpg"
+                    alt="Rough MS Paint sketch of Slime Tony in his shell, drawn with a mouse"
+                  />
+                </div>
+                <figcaption><b>2022.</b> First sketch, in MS Paint</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/tony-2022-class.png"
+                    alt="Slime Tony as turned in for class, in a green sweater with his shell on"
+                  />
+                </div>
+                <figcaption><b>2022.</b> Class project</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/snails-talking_thinking-1.png"
+                    alt="Slime Tony with his shell on, one hand on his chin"
+                  />
+                </div>
+                <figcaption><b>2023.</b> Redesign</figcaption>
+              </figure>
+            </div>
+
+            <p>
+              In the version I turned in, his portraits were still images, and
+              the only thing that moved was the title screen. With the
+              redesign, every portrait became a looping two-frame GIF, and I
+              put a lot more polish and detail into the artwork.
+            </p>
+            <div class="figs figs--4">
+              <figure data-sprite>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/snails-smiling_waving-1.png"
+                    data-frames="./images/process/snails-smiling_waving-1.png ./images/process/snails-smiling_waving-2.png"
+                    alt="Tony smiling and waving"
+                  />
+                </div>
+                <figcaption>
+                  <b>Waving</b>
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="pause"
+                      aria-label="Pause"
+                      title="Pause"
+                    >
+                      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/snails-talking_thinking-1.png"
+                    data-frames="./images/process/snails-talking_thinking-1.png ./images/process/snails-talking_thinking-2.png"
+                    alt="Tony talking with a hand on his chin"
+                  />
+                </div>
+                <figcaption>
+                  <b>Thinking</b>
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="pause"
+                      aria-label="Pause"
+                      title="Pause"
+                    >
+                      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/snails-furrowed_normal-1.png"
+                    data-frames="./images/process/snails-furrowed_normal-1.png ./images/process/snails-furrowed_normal-2.png"
+                    alt="Tony with a furrowed brow"
+                  />
+                </div>
+                <figcaption>
+                  <b>Furrowed</b>
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="pause"
+                      aria-label="Pause"
+                      title="Pause"
+                    >
+                      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/snails-sad_normal-1.png"
+                    data-frames="./images/process/snails-sad_normal-1.png ./images/process/snails-sad_normal-2.png"
+                    alt="Tony looking sad"
+                  />
+                </div>
+                <figcaption>
+                  <b>Sad</b>
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="pause"
+                      aria-label="Pause"
+                      title="Pause"
+                    >
+                      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="versions">
+            <h2>Versions</h2>
+            <p>
+              I made Snails in 2022 as my final for a college class. In late
+              2023, right before I graduated, I came back to it: I redesigned
+              Tony, animated his portraits, added more dialogue options, and
+              moved it out of the p5 web editor and onto a live server, so it
+              could launch with my portfolio site.
+            </p>
+            <div class="figs figs--2">
+              <figure>
+                <div class="stage stage--paper">
+                  <img
+                    src="./images/process/snails-title-2022.webp"
+                    alt="The 2022 title screen: Tony in a green sweater beside the words A Game About Snails"
+                  />
+                </div>
+                <figcaption><b>2022.</b> Class project</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--paper">
+                  <img
+                    src="./images/process/snails-title-2023-anim.webp"
+                    alt="Title screen with the instruction: press 1 to begin"
+                  />
+                </div>
+                <figcaption><b>2023.</b> Redesign</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="structure">
+            <h2>Scene structure</h2>
+            <p>
+              Snails runs on a very simple p5 scene method. Each scene is one
+              line from Tony, one of his portraits, and the replies you can
+              pick. Pick one and the next scene plays.
+            </p>
+            <figure class="chart">
+              <ol class="flow flow--wide">
+                <li>
+                  <img src="./images/process/snails-talking_normal.webp" alt="" />
+                  Tony talks
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li class="flow-pair">
+                  <span>Reply 1</span>
+                  <span>Reply 2</span>
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li>
+                  <img src="./images/process/snails-talking_thinking.webp" alt="" />
+                  Tony talks
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li class="flow-pair">
+                  <span>Reply 1</span>
+                  <span>Reply 2</span>
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li>
+                  <img src="./images/process/snails-smiling_waving.webp" alt="" />
+                  Tony talks
+                </li>
+              </ol>
+            </figure>
+            <p>
+              In the version I turned in, most scenes had a single reply. For
+              the 2023 update I gave most of them a second option, so you have
+              a couple of ways to answer Tony, even when they mean the same
+              thing.
+            </p>
+            <p>In the code, a scene looks like this:</p>
+            <pre class="code"><code>scenes[0] = {
+  text: "Oh, hi.\n\n[1] Hello :)",
+  image: assets.smiling_waving,
+  keys: ["1"],
+  nextPages: [1],
+  sound: song,
+};</code></pre>
+            <p>
+              Near the start you type in your name, and Tony uses it for the
+              rest of the conversation.
+            </p>
+            <p>
+              <a href="./slugs-process">A Game About Slugs</a> builds off
+              the same structure.
+            </p>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="meaning">
+            <h2>What it means to me</h2>
+            <p>
+              Start writing here.
+            </p>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="tools">
+            <h2>Tools used</h2>
+            <ul class="tag-list">
+              <li class="tag">Procreate</li>
+              <li class="tag">P5.js</li>
+              <li class="tag">Determination Mono Web</li>
+            </ul>
+            <p>
+              Background music by
+              <a
+                href="https://joshuuu.itch.io/short-loopable-background-music"
+                target="_blank"
+                rel="noopener noreferrer"
+                >joshuuu</a
+              >
+              and sound effects by
+              <a
+                href="https://noahkuehne.itch.io/free-menu-sound-pack-ui-sounds-v2"
+                target="_blank"
+                rel="noopener noreferrer"
+                >noahkuehne</a
+              >. Determination Mono Web is a typeface by
+              <a
+                href="https://online-fonts.com/fonts/determination-mono-web"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Abacadaba</a
+              >.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="./scripts/theme-toggle.js"></script>
+    <script src="./scripts/process.js"></script>
+  </body>
+</html>

@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>How A Game About Slugs got made | Eddie Lampert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/hdi6oye.css" />
+    <link href="./styles/roots.css" rel="stylesheet" type="text/css" />
+    <link href="./styles/process.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="process">
+    <div class="web-bg" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-head">
+      <a class="logo" href="./" aria-label="Eddie Lampert — home">:_)</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./">Home</a>
+        <button
+          class="bulb-toggle theme-toggle-icon"
+          id="theme-toggle"
+          aria-pressed="false"
+        >
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <span>Lights</span>
+        </button>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="proc-hero">
+        <div>
+          <p class="hero-back">
+            <a class="backlink" href="./slugs">back to project home</a>
+          </p>
+          <h1>How A Game About Slugs got made</h1>
+          <p class="lede">
+            The sketches and concepts behind the game.
+          </p>
+        </div>
+        <div class="hero-art">
+          <img
+            src="./images/process/epilogue.webp"
+            alt="A character lying back on a sprouting flowerpot, rubbing his eyes, with two blue birds overhead"
+          />
+        </div>
+      </section>
+
+      <div class="with-toc">
+        <nav class="toc" aria-label="On this page">
+          <ol>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#tony">Redesigning Slime Tony</a></li>
+            <li><a href="#pixel">Learning pixel art</a></li>
+            <li><a href="#garden">Garden backgrounds</a></li>
+            <li><a href="#sprites">Plant sprites</a></li>
+            <li><a href="#animation">Animation</a></li>
+            <li><a href="#cutscenes">Cutscenes</a></li>
+            <li><a href="#agency">Player agency</a></li>
+            <li><a href="#meaning">What it means to me</a></li>
+            <li><a href="#tools">Tools used</a></li>
+          </ol>
+        </nav>
+
+        <div>
+          <section class="proc-section" id="concept">
+            <h2>Concept</h2>
+            <p>
+              A short game about snai- oh, wait...slugs? Slime Tony doesn't
+              have his shell on anymore. It seems you two have some catching up
+              to do! Couldn't hurt to water some plants while you're at it.
+            </p>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="tony">
+            <h2>Redesigning Slime Tony</h2>
+            <p>
+              Tony has been drawn four times. My first ever Slime Tony was a quick
+              sketch I did in class, in MS Paint, with my mouse. Then came the
+              one I turned in, a redesign in late 2023, and the one I drew for
+              Slugs, this time without the shell.
+            </p>
+            <div class="figs figs--2">
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    class="on-white"
+                    src="./images/process/tony-2022-ms-paint.jpg"
+                    alt="Rough MS Paint sketch of Slime Tony in his shell, drawn with a mouse"
+                  />
+                </div>
+                <figcaption><b>2022.</b> First sketch, in MS Paint</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/tony-2022-class.png"
+                    alt="Slime Tony as turned in for class, in a green sweater with his shell on"
+                  />
+                </div>
+                <figcaption><b>2022.</b> Class project</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/snails-smiling_waving.webp"
+                    alt="Slime Tony in A Game About Snails, waving, with a snail shell on his head"
+                  />
+                </div>
+                <figcaption><b>2023.</b> Redesign</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/tony_warm-1.png"
+                    alt="Slime Tony's portrait in A Game About Slugs, smiling, no shell"
+                  />
+                </div>
+                <figcaption><b>2026.</b> A Game About Slugs</figcaption>
+              </figure>
+            </div>
+
+            <p>
+              Each of his faces is two PNG frames that the game flips between.
+              Most of them have a rain version too.
+            </p>
+            <div class="figs figs--3">
+              <figure data-sprite>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/tony_happy-1.png"
+                    data-frames="./images/process/tony_happy-1.png ./images/process/tony_happy-2.png"
+                    data-frames-rain="./images/process/tony_happy_rain-1.png ./images/process/tony_happy_rain-2.png"
+                    alt="Tony grinning"
+                  />
+                </div>
+                <figcaption>
+                  <b>Happy</b>
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="pause"
+                      aria-label="Pause"
+                      title="Pause"
+                    >
+                      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="rain"
+                      aria-pressed="false"
+                      aria-label="Rain version"
+                      title="Rain version"
+                    >
+                      <i class="fa-solid fa-cloud-rain" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/tony_warm-1.png"
+                    data-frames="./images/process/tony_warm-1.png ./images/process/tony_warm-2.png"
+                    data-frames-rain="./images/process/tony_warm_rain-1.png ./images/process/tony_warm_rain-2.png"
+                    alt="Tony with a warm smile"
+                  />
+                </div>
+                <figcaption>
+                  <b>Warm</b>
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="pause"
+                      aria-label="Pause"
+                      title="Pause"
+                    >
+                      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="rain"
+                      aria-pressed="false"
+                      aria-label="Rain version"
+                      title="Rain version"
+                    >
+                      <i class="fa-solid fa-cloud-rain" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    src="./images/process/tony_shy-1.png"
+                    data-frames="./images/process/tony_shy-1.png ./images/process/tony_shy-2.png"
+                    data-frames-rain="./images/process/tony_shy_rain-1.png ./images/process/tony_shy_rain-2.png"
+                    alt="Tony rubbing the back of his head"
+                  />
+                </div>
+                <figcaption>
+                  <b>Shy</b>
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="pause"
+                      aria-label="Pause"
+                      title="Pause"
+                    >
+                      <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="rain"
+                      aria-pressed="false"
+                      aria-label="Rain version"
+                      title="Rain version"
+                    >
+                      <i class="fa-solid fa-cloud-rain" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+            <p>Before landing on his look, I went through a few sketches.</p>
+            <div class="figs figs--3 steps">
+              <figure>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    class="on-white"
+                    src="./images/process/tony-design-1.png"
+                    alt="First sketch of shell-less Tony: wild curly hair, round glasses, gritted teeth"
+                  />
+                </div>
+                <figcaption>First pass</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    class="on-white"
+                    src="./images/process/tony-design-2.png"
+                    alt="Second sketch: softer hair, dark round glasses, a straight face"
+                  />
+                </div>
+                <figcaption>Second pass</figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--tall stage--clear">
+                  <img
+                    class="on-white"
+                    src="./images/process/tony-design-3.jpg"
+                    alt="Third sketch: longer hair, round glasses, waving, close to his final look"
+                  />
+                </div>
+                <figcaption>Third pass</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="pixel">
+            <h2>Learning pixel art</h2>
+            <p>
+              I learned pixel art for this project. It shows most in the
+              interface: the text boxes, the buttons, the arrows, the loading
+              snail and the raindrops.
+            </p>
+            <div class="ui-kit">
+              <img
+                class="pixel"
+                src="./images/process/ui-textbox.png"
+                alt="Pixel art dialogue box with a tiny snail in the corner"
+              />
+              <img
+                class="pixel"
+                src="./images/process/ui-text_button.png"
+                alt="Pixel art letter button"
+              />
+              <img
+                class="pixel"
+                src="./images/process/ui-arrow_left.png"
+                alt="Pixel art left arrow button"
+              />
+              <img
+                class="pixel"
+                src="./images/process/ui-arrow_right.png"
+                alt="Pixel art right arrow button"
+              />
+              <img
+                class="pixel"
+                src="./images/process/ui-snail_icon.png"
+                width="85"
+                alt="Pixel art snail used on the loading screen"
+              />
+              <img
+                class="pixel"
+                src="./images/process/ui-rain.png"
+                width="64"
+                alt="A single pixel art raindrop"
+              />
+              <img
+                class="pixel"
+                src="./images/process/ui-rain-collision.png"
+                width="192"
+                alt="Three frames of a raindrop splashing"
+              />
+            </div>
+            <p>
+              I made the side panels that frame the game in Aseprite too. They
+              change with what's happening: green while you play, orange while
+              you type your name, and purple in the rain.
+            </p>
+            <div class="panel-stack">
+              <img
+                class="pixel"
+                src="./images/process/side-panel-2.png"
+                alt="Green dithered gradient side panel"
+              />
+              <img
+                class="pixel"
+                src="./images/process/side-panel-3.png"
+                alt="Orange dithered gradient side panel"
+              />
+              <img
+                class="pixel"
+                src="./images/process/side-panel-5.png"
+                alt="Purple dithered gradient side panel"
+              />
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="garden">
+            <h2>Garden backgrounds</h2>
+            <p>
+              The garden is three screens you walk between. I painted each one
+              twice: once for a normal day, and once for the rain.
+            </p>
+            <div class="figs figs--3">
+              <figure>
+                <div class="frame">
+                  <img
+                    src="./images/process/garden-concept-1.webp"
+                    alt="Concept sketch of screen 1: five dashed beds of herbs, flowers and the wild patch, with Tony"
+                  />
+                </div>
+                <figcaption><b>Screen 1.</b> Concept</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img
+                    src="./images/process/garden-concept-2.webp"
+                    alt="Concept sketch of screen 2: the overgrown shell beside a bed of staked tomatoes, with Tony"
+                  />
+                </div>
+                <figcaption><b>Screen 2.</b> Concept</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img
+                    src="./images/process/garden-concept-3.webp"
+                    alt="Concept sketch of screen 3: a bed with a seedling and an empty bed, with Tony"
+                  />
+                </div>
+                <figcaption><b>Screen 3.</b> Concept</figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="frame">
+                  <img
+                    src="./images/process/section1-normal.webp"
+                    data-frames="./images/process/section1-normal.webp"
+                    data-frames-rain="./images/process/section1-rain.webp"
+                    alt="First garden screen: five soil beds and a stone path"
+                  />
+                </div>
+                <figcaption>
+                  <b>Screen 1.</b> Herbs, flowers and the wild patch
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="rain"
+                      aria-pressed="false"
+                      aria-label="Rain version"
+                      title="Rain version"
+                    >
+                      <i class="fa-solid fa-cloud-rain" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="frame">
+                  <img
+                    src="./images/process/section2-normal.webp"
+                    data-frames="./images/process/section2-normal.webp"
+                    data-frames-rain="./images/process/section2-rain.webp"
+                    alt="Second garden screen: open grass and one large bed"
+                  />
+                </div>
+                <figcaption>
+                  <b>Screen 2.</b> The shell and the tomatoes
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="rain"
+                      aria-pressed="false"
+                      aria-label="Rain version"
+                      title="Rain version"
+                    >
+                      <i class="fa-solid fa-cloud-rain" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+              <figure data-sprite>
+                <div class="frame">
+                  <img
+                    src="./images/process/section3-normal.webp"
+                    data-frames="./images/process/section3-normal.webp"
+                    data-frames-rain="./images/process/section3-rain.webp"
+                    alt="Third garden screen: two beds"
+                  />
+                </div>
+                <figcaption>
+                  <b>Screen 3.</b> The seedling and the empty plot
+                  <span class="toggles">
+                    <button
+                      type="button"
+                      class="theme-toggle-icon"
+                      data-action="rain"
+                      aria-pressed="false"
+                      aria-label="Rain version"
+                      title="Rain version"
+                    >
+                      <i class="fa-solid fa-cloud-rain" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="sprites">
+            <h2>Plant sprites</h2>
+            <p>
+              Each sprite is just a couple of images played in a loop. Every
+              plant has three versions: dry, watered, and rained on.
+            </p>
+            <div class="figs figs--3">
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/plant-sunflowers-dry.webp"
+                    alt="Three sunflowers, dull yellow"
+                  />
+                </div>
+                <figcaption><b>Dry</b></figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/plant-sunflowers-watered.webp"
+                    alt="The same sunflowers, bright orange and sparkling"
+                  />
+                </div>
+                <figcaption><b>Watered</b></figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/plant-sunflowers-rain.webp"
+                    alt="The same sunflowers in pinks and purples"
+                  />
+                </div>
+                <figcaption><b>Rain</b></figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/shell-normal.webp"
+                    alt="Tony's old shell, overgrown with moss and mushrooms"
+                  />
+                </div>
+                <figcaption><b>The shell</b></figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/shell-ready.webp"
+                    alt="The shell glowing gold with sparkles"
+                  />
+                </div>
+                <figcaption><b>Glowing</b></figcaption>
+              </figure>
+              <figure>
+                <div class="stage stage--clear">
+                  <img
+                    src="./images/process/shell-rain.webp"
+                    alt="The shell in muted rain colours"
+                  />
+                </div>
+                <figcaption><b>Rain</b></figcaption>
+              </figure>
+            </div>
+            <div class="figs figs--3">
+              <figure>
+                <div class="stage stage--clear">
+                  <video
+                    class="on-white"
+                    src="./images/process/seedling-timelapse.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    aria-label="Timelapse of the watered seedling sprite being drawn, from line art to colour"
+                  ></video>
+                </div>
+                <figcaption><b>Timelapse.</b> The watered seedling</figcaption>
+              </figure>
+            </div>
+            <p>
+              Once a few plants were working, I mocked the garden up in
+              Procreate to see how it all fit together.
+            </p>
+            <div class="figs">
+              <figure>
+                <div class="frame">
+                  <img
+                    src="./images/process/working-demo.gif"
+                    alt="Procreate mock-up of the first garden screen with animated plants and Tony winking"
+                  />
+                </div>
+                <figcaption><b>The working demo</b></figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="animation">
+            <h2>Animation</h2>
+            <p>
+              p5 doesn't give you much control over sprite animation, and it
+              doesn't give you a fluid frame rate. My sprites are short loops
+              at a fixed speed.
+            </p>
+            <p>
+              So when Tony jumps at the start of the game, that isn't one
+              animation. It's three sprites played quickly, one after another.
+            </p>
+            <div class="seq" data-seq>
+              <div class="stage stage--tall stage--clear">
+                <img
+                  data-seq-img
+                  src="./images/process/tony_start-1.png"
+                  alt="Tony's surprised animation: he stands facing away, jumps, and turns to face you"
+                />
+              </div>
+              <div class="seq-bar">
+                <button
+                  type="button"
+                  class="theme-toggle-icon"
+                  data-action="pause"
+                  aria-label="Pause"
+                  title="Pause"
+                >
+                  <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                </button>
+                <ol class="seq-track" aria-label="The three sprites, in order">
+                  <li
+                    data-step
+                    data-fps="3"
+                    data-loops="2"
+                    data-frames="./images/process/tony_start-1.png ./images/process/tony_start-2.png"
+                  >
+                    <span class="step-num">1</span>
+                    <span class="step-text">
+                      <span class="step-name">tony_start</span>
+                      <span class="step-meta">Loops until you click him</span>
+                    </span>
+                  </li>
+                  <li
+                    data-step
+                    data-fps="6"
+                    data-frames="./images/process/tony_surprised-1.png ./images/process/tony_surprised-2.png ./images/process/tony_surprised-3.png"
+                  >
+                    <span class="step-num">2</span>
+                    <span class="step-text">
+                      <span class="step-name">tony_surprised</span>
+                      <span class="step-meta">Plays once, 0.5s</span>
+                    </span>
+                  </li>
+                  <li
+                    data-step
+                    data-fps="3"
+                    data-duration="500"
+                    data-frames="./images/process/tony_start_idle-1.png ./images/process/tony_start_idle-2.png"
+                  >
+                    <span class="step-num">3</span>
+                    <span class="step-text">
+                      <span class="step-name">tony_start_idle</span>
+                      <span class="step-meta">Loops for 0.5s</span>
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <p>
+              The cutscenes use the same trick. Tony taking his shell off is
+              four sprites in a row.
+            </p>
+            <div class="seq" data-seq>
+              <div class="frame">
+                <img
+                  data-seq-img
+                  src="./images/process/tony_remove_shell-1.webp"
+                  alt="Cutscene: Tony pulls his shell off and his ears pop out"
+                />
+              </div>
+              <div class="seq-bar">
+                <button
+                  type="button"
+                  class="theme-toggle-icon"
+                  data-action="pause"
+                  aria-label="Pause"
+                  title="Pause"
+                >
+                  <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                </button>
+                <ol class="seq-track" aria-label="The four sprites, in order">
+                  <li
+                    data-step
+                    data-fps="3"
+                    data-frames="./images/process/tony_remove_shell-1.webp ./images/process/tony_remove_shell-2.webp ./images/process/tony_remove_shell-3.webp ./images/process/tony_remove_shell-4.webp"
+                  >
+                    <span class="step-num">1</span>
+                    <span class="step-text">
+                      <span class="step-name">remove_shell</span>
+                      <span class="step-meta">Plays once, 1.3s</span>
+                    </span>
+                  </li>
+                  <li
+                    data-step
+                    data-fps="3"
+                    data-frames="./images/process/tony_remove_shell_after-1.webp ./images/process/tony_remove_shell_after-2.webp"
+                  >
+                    <span class="step-num">2</span>
+                    <span class="step-text">
+                      <span class="step-name">remove_shell_after</span>
+                      <span class="step-meta">Plays once, 0.7s</span>
+                    </span>
+                  </li>
+                  <li
+                    data-step
+                    data-fps="6"
+                    data-frames="./images/process/tony_ears-1.webp ./images/process/tony_ears-2.webp ./images/process/tony_ears-3.webp ./images/process/tony_ears-4.webp ./images/process/tony_ears-5.webp"
+                  >
+                    <span class="step-num">3</span>
+                    <span class="step-text">
+                      <span class="step-name">ears</span>
+                      <span class="step-meta">Plays once, 0.8s</span>
+                    </span>
+                  </li>
+                  <li
+                    data-step
+                    data-fps="3"
+                    data-loops="3"
+                    data-frames="./images/process/tony_ears_after-1.webp ./images/process/tony_ears_after-2.webp"
+                  >
+                    <span class="step-num">4</span>
+                    <span class="step-text">
+                      <span class="step-name">ears_after</span>
+                      <span class="step-meta">Loops while he talks</span>
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="cutscenes">
+            <h2>Cutscenes</h2>
+            <p>
+              Every cutscene went into the game as a rough placeholder first.
+              I swapped each one out as I finished it.
+            </p>
+            <div class="figs figs--4 steps">
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-kneeling-v1.webp" alt="Loose line sketch of Tony kneeling by the shell" />
+                </div>
+                <figcaption>Placeholder sketch</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-kneeling-v2.webp" alt="Tighter line drawing with grass and fence" />
+                </div>
+                <figcaption>Cleaner lines</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-kneeling-v3.webp" alt="Background painted, Tony still blank" />
+                </div>
+                <figcaption>Background first</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-kneeling-v4.webp" alt="Finished painting of Tony kneeling by the shell" />
+                </div>
+                <figcaption>Final</figcaption>
+              </figure>
+            </div>
+            <div class="figs figs--4 steps">
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-rainfall-v1.webp" alt="Line sketch of Tony in profile, looking up at rain" />
+                </div>
+                <figcaption>Placeholder sketch</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-rainfall-v2.webp" alt="Grey block-in with a fence added" />
+                </div>
+                <figcaption>Grey block-in</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-rainfall-v3.webp" alt="Purple sky painted behind the grey figure" />
+                </div>
+                <figcaption>Colour, part way</figcaption>
+              </figure>
+              <figure>
+                <div class="frame">
+                  <img src="./images/process/cut-rainfall-v4.webp" alt="Finished painting of Tony looking up into the rain" />
+                </div>
+                <figcaption>Final</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="agency">
+            <h2>Player agency</h2>
+            <p>
+              Slugs builds off the structure of
+              <a href="./snails-process">Snails</a>, but I wanted the
+              player to have a lot more say this time.
+            </p>
+
+            <h3>A Game About Snails</h3>
+            <p>
+              Snails was one-sided. Tony talked at you. Outside of typing in
+              your own name, all you could do was pick between very similar
+              replies, and whichever one you picked, the next line was the
+              same.
+            </p>
+            <figure class="chart">
+              <ol class="flow flow--wide">
+                <li>
+                  <img src="./images/process/snails-talking_normal.webp" alt="" />
+                  Tony talks
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li class="flow-pair">
+                  <span>Reply 1</span>
+                  <span>Reply 2</span>
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li>
+                  <img src="./images/process/snails-talking_thinking.webp" alt="" />
+                  Tony talks
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li class="flow-pair">
+                  <span>Reply 1</span>
+                  <span>Reply 2</span>
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li>
+                  <img src="./images/process/snails-smiling_waving.webp" alt="" />
+                  Tony talks
+                </li>
+              </ol>
+            </figure>
+
+            <h3>A Game About Slugs</h3>
+            <p>
+              For Slugs I wanted players to have a legit sense of agency in
+              how they progress. That's why you can water whatever you want
+              first.
+            </p>
+            <figure class="chart">
+              <ol class="flow flow--rows">
+                <li>
+                  <img class="flow-tony" src="./images/process/tony_start_idle-1.png" alt="" />
+                  Meet Tony
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li class="flow-group">
+                  <span class="tag">Water in any order</span>
+                  <ul class="flow-plots">
+                    <li>
+                      <img src="./images/process/plant-thyme-watered.webp" alt="" />
+                      Herbs
+                    </li>
+                    <li>
+                      <img src="./images/process/plant-sunflowers-watered.webp" alt="" />
+                      Flowers
+                    </li>
+                    <li>
+                      <img src="./images/process/plant-wildpatch-watered.webp" alt="" />
+                      Wild patch
+                    </li>
+                    <li>
+                      <img src="./images/process/plant-tomatoes-watered.webp" alt="" />
+                      Tomatoes
+                    </li>
+                    <li>
+                      <img src="./images/process/plant-seedling-watered.webp" alt="" />
+                      Seedling
+                    </li>
+                    <li>
+                      <span class="flow-empty"></span>
+                      Empty plot
+                    </li>
+                  </ul>
+                </li>
+                <li class="flow-break" aria-hidden="true"></li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li>
+                  <img class="flow-shell" src="./images/process/shell-ready.webp" alt="" />
+                  The shell
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li>
+                  <img class="flow-thumb" src="./images/process/cut-kneeling-v4.webp" alt="" />
+                  Cutscenes
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li>
+                  <img class="flow-rain" src="./images/process/tony_warm_rain-1.png" alt="" />
+                  Rain
+                </li>
+                <li class="flow-arrow" aria-hidden="true">→</li>
+                <li class="flow-pair">
+                  <span>Stay in garden</span>
+                  <span>Return to title</span>
+                </li>
+              </ol>
+            </figure>
+            <p>
+              When the story's over you can return to the title, or stay in
+              the garden and hang out. If you stay, you can wander around in
+              the rain and click on things for flavor text.
+            </p>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="meaning">
+            <h2>What it means to me</h2>
+            <p>
+              Start writing here.
+            </p>
+          </section>
+
+          <hr class="squiggle-divider" aria-hidden="true" />
+
+          <section class="proc-section" id="tools">
+            <h2>Tools used</h2>
+            <ul class="tag-list">
+              <li class="tag">Procreate</li>
+              <li class="tag">Aseprite</li>
+              <li class="tag">Audacity</li>
+              <li class="tag">P5.js</li>
+              <li class="tag">BoldPixels</li>
+            </ul>
+            <p>
+              BoldPixels is a typeface by
+              <a
+                href="https://yukipixels.itch.io/boldpixels"
+                target="_blank"
+                rel="noopener noreferrer"
+                >@YukiPixels</a
+              >.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="./scripts/theme-toggle.js"></script>
+    <script src="./scripts/process.js"></script>
+  </body>
+</html>
