@@ -54,7 +54,8 @@
           </p>
           <h1>How A Game About Slugs got made</h1>
           <p class="lede">
-            The sketches and concepts behind the game.
+            A detailed breakdown of the creative process and steps it took to
+            bring this project to life.
           </p>
         </div>
         <div class="hero-art">
@@ -85,9 +86,17 @@
           <section class="proc-section" id="concept">
             <h2>Concept</h2>
             <p>
-              A short game about snai- oh, wait...slugs? Slime Tony doesn't
-              have his shell on anymore. It seems you two have some catching up
-              to do! Couldn't hurt to water some plants while you're at it.
+              A Game About Slugs is the sequel to my first game, A Game About
+              Snails.
+            </p>
+            <p>Both games follow Slime Tony, a snail who used to be a slug.</p>
+            <p>
+              I went through major disruptions in my life and felt the need to
+              revisit Tony and his universe to process my feelings.
+            </p>
+            <p>
+              It took a lot to discover what that story was. It feels like it's
+              always changing, even now.
             </p>
           </section>
 
@@ -96,10 +105,13 @@
           <section class="proc-section" id="tony">
             <h2>Redesigning Slime Tony</h2>
             <p>
-              Tony has been drawn four times. My first ever Slime Tony was a quick
-              sketch I did in class, in MS Paint, with my mouse. Then came the
-              one I turned in, a redesign in late 2023, and the one I drew for
-              Slugs, this time without the shell.
+              Slime Tony originally came out of a quick sketch I did in class,
+              in MS Paint, with my mouse. I built upon that original design when
+              it came time to turn in the project at the end of that semester.
+            </p>
+            <p>
+              He had a brief redesign in 2023, then came his appearance in
+              Slugs, without his shell.
             </p>
             <div class="figs figs--2">
               <figure>
@@ -142,8 +154,9 @@
             </div>
 
             <p>
-              Each of his faces is two PNG frames that the game flips between.
-              Most of them have a rain version too.
+              Each of his VN portraits is two PNG frames that the game flips
+              between at 3fps. All of them have a corresponding "rain palette"
+              version.
             </p>
             <div class="figs figs--3">
               <figure data-sprite>
@@ -249,7 +262,10 @@
                 </figcaption>
               </figure>
             </div>
-            <p>Before landing on his look, I went through a few sketches.</p>
+            <p>
+              His appearance this time around was a loaded task. I went through
+              a few sketches before landing on his final look for Slugs.
+            </p>
             <div class="figs figs--3 steps">
               <figure>
                 <div class="stage stage--tall stage--clear">
@@ -289,9 +305,13 @@
           <section class="proc-section" id="pixel">
             <h2>Learning pixel art</h2>
             <p>
-              I learned pixel art for this project. It shows most in the
-              interface: the text boxes, the buttons, the arrows, the loading
-              snail and the raindrops.
+              Snails consisted largely of borrowed assets. For this project, I
+              wanted to make my own UI assets, which required me to pick up
+              pixel art using Aseprite.
+            </p>
+            <p>
+              It shows the most in the interface through the name select, text
+              boxes, buttons, iconography, and raindrops.
             </p>
             <div class="ui-kit">
               <img
@@ -334,9 +354,7 @@
               />
             </div>
             <p>
-              I made the side panels that frame the game in Aseprite too. They
-              change with what's happening: green while you play, orange while
-              you type your name, and purple in the rain.
+              The side panels that frame the game were also made in Aseprite.
             </p>
             <div class="panel-stack">
               <img
@@ -362,8 +380,8 @@
           <section class="proc-section" id="garden">
             <h2>Garden backgrounds</h2>
             <p>
-              The garden is three screens you walk between. I painted each one
-              twice: once for a normal day, and once for the rain.
+              Tony's garden consists of three screens you walk between. Each
+              section has a normal and a rain variant.
             </p>
             <div class="figs figs--3">
               <figure>
@@ -476,8 +494,9 @@
           <section class="proc-section" id="sprites">
             <h2>Plant sprites</h2>
             <p>
-              Each sprite is just a couple of images played in a loop. Every
-              plant has three versions: dry, watered, and rained on.
+              Like Tony's portraits, each plant sprite is two PNG images that
+              the game flips between at 3fps. Every plant has three versions:
+              dry, watered, and rained on.
             </p>
             <div class="figs figs--3">
               <figure>
@@ -507,6 +526,13 @@
                 </div>
                 <figcaption><b>Rain</b></figcaption>
               </figure>
+            </div>
+            <p>
+              The shell is a special case. The glowing variant appears once
+              everything else has been watered, and Tony is ready to talk about
+              it.
+            </p>
+            <div class="figs figs--3">
               <figure>
                 <div class="stage stage--clear">
                   <img
@@ -535,6 +561,10 @@
                 <figcaption><b>Rain</b></figcaption>
               </figure>
             </div>
+            <p>
+              The whole game took a lot of drawing. Each frame was sketched,
+              lined, colored, and shaded separately.
+            </p>
             <div class="figs figs--3">
               <figure>
                 <div class="stage stage--clear">
@@ -552,8 +582,9 @@
               </figure>
             </div>
             <p>
-              Once a few plants were working, I mocked the garden up in
-              Procreate to see how it all fit together.
+              Once I had my first background, set of plants, and a working Tony
+              sprite, I mocked the garden up in Procreate to make sure
+              everything was going to fit well at their native resolutions.
             </p>
             <div class="figs">
               <figure>
@@ -574,8 +605,8 @@
             <h2>Animation</h2>
             <p>
               p5 doesn't give you much control over sprite animation, and it
-              doesn't give you a fluid frame rate. My sprites are short loops
-              at a fixed speed.
+              doesn't give you a fluid frame rate. My sprites are short loops at
+              a fixed speed.
             </p>
             <p>
               So when Tony jumps at the start of the game, that isn't one
@@ -640,8 +671,9 @@
             </div>
 
             <p>
-              The cutscenes use the same trick. Tony taking his shell off is
-              four sprites in a row.
+              Some of the cutscenes use the same trick. Tony taking his shell
+              off is four sprites played in a row. I really wanted to get that
+              "pop" feeling with his ears and antenna sprouting.
             </p>
             <div class="seq" data-seq>
               <div class="frame">
@@ -717,31 +749,43 @@
           <section class="proc-section" id="cutscenes">
             <h2>Cutscenes</h2>
             <p>
-              Every cutscene went into the game as a rough placeholder first.
-              I swapped each one out as I finished it.
+              Every cutscene went into the game as a rough placeholder first. I
+              swapped each one out as I finished it.
             </p>
             <div class="figs figs--4 steps">
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-kneeling-v1.webp" alt="Loose line sketch of Tony kneeling by the shell" />
+                  <img
+                    src="./images/process/cut-kneeling-v1.webp"
+                    alt="Loose line sketch of Tony kneeling by the shell"
+                  />
                 </div>
                 <figcaption>Placeholder sketch</figcaption>
               </figure>
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-kneeling-v2.webp" alt="Tighter line drawing with grass and fence" />
+                  <img
+                    src="./images/process/cut-kneeling-v2.webp"
+                    alt="Tighter line drawing with grass and fence"
+                  />
                 </div>
                 <figcaption>Cleaner lines</figcaption>
               </figure>
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-kneeling-v3.webp" alt="Background painted, Tony still blank" />
+                  <img
+                    src="./images/process/cut-kneeling-v3.webp"
+                    alt="Background painted, Tony still blank"
+                  />
                 </div>
                 <figcaption>Background first</figcaption>
               </figure>
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-kneeling-v4.webp" alt="Finished painting of Tony kneeling by the shell" />
+                  <img
+                    src="./images/process/cut-kneeling-v4.webp"
+                    alt="Finished painting of Tony kneeling by the shell"
+                  />
                 </div>
                 <figcaption>Final</figcaption>
               </figure>
@@ -749,25 +793,37 @@
             <div class="figs figs--4 steps">
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-rainfall-v1.webp" alt="Line sketch of Tony in profile, looking up at rain" />
+                  <img
+                    src="./images/process/cut-rainfall-v1.webp"
+                    alt="Line sketch of Tony in profile, looking up at rain"
+                  />
                 </div>
                 <figcaption>Placeholder sketch</figcaption>
               </figure>
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-rainfall-v2.webp" alt="Grey block-in with a fence added" />
+                  <img
+                    src="./images/process/cut-rainfall-v2.webp"
+                    alt="Grey block-in with a fence added"
+                  />
                 </div>
                 <figcaption>Grey block-in</figcaption>
               </figure>
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-rainfall-v3.webp" alt="Purple sky painted behind the grey figure" />
+                  <img
+                    src="./images/process/cut-rainfall-v3.webp"
+                    alt="Purple sky painted behind the grey figure"
+                  />
                 </div>
                 <figcaption>Colour, part way</figcaption>
               </figure>
               <figure>
                 <div class="frame">
-                  <img src="./images/process/cut-rainfall-v4.webp" alt="Finished painting of Tony looking up into the rain" />
+                  <img
+                    src="./images/process/cut-rainfall-v4.webp"
+                    alt="Finished painting of Tony looking up into the rain"
+                  />
                 </div>
                 <figcaption>Final</figcaption>
               </figure>
@@ -780,21 +836,32 @@
             <h2>Player agency</h2>
             <p>
               Slugs builds off the structure of
-              <a href="./snails-process">Snails</a>, but I wanted the
-              player to have a lot more say this time.
+              <a href="./snails-process">Snails</a>, but I wanted the player to
+              have a lot more say this time.
             </p>
 
             <h3>A Game About Snails</h3>
             <p>
-              Snails was one-sided. Tony talked at you. Outside of typing in
-              your own name, all you could do was pick between very similar
-              replies, and whichever one you picked, the next line was the
-              same.
+              Something that had always bugged me about Snails is that it felt
+              like more of a talking simulator than a narrative experience.
+            </p>
+            <p>
+              Outside of typing your own name, all you could do was pick between
+              two very similar replies. Whatever you picked, Tony's response was
+              the same.
+            </p>
+            <p>
+              I never liked the feeling of Tony holding the player hostage and
+              simply talking at them. It especially didn't fit right with the
+              subject matter.
             </p>
             <figure class="chart">
               <ol class="flow flow--wide">
                 <li>
-                  <img src="./images/process/snails-talking_normal.webp" alt="" />
+                  <img
+                    src="./images/process/snails-talking_normal.webp"
+                    alt=""
+                  />
                   Tony talks
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
@@ -804,7 +871,10 @@
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
                 <li>
-                  <img src="./images/process/snails-talking_thinking.webp" alt="" />
+                  <img
+                    src="./images/process/snails-talking_thinking.webp"
+                    alt=""
+                  />
                   Tony talks
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
@@ -814,7 +884,10 @@
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
                 <li>
-                  <img src="./images/process/snails-smiling_waving.webp" alt="" />
+                  <img
+                    src="./images/process/snails-smiling_waving.webp"
+                    alt=""
+                  />
                   Tony talks
                 </li>
               </ol>
@@ -822,14 +895,23 @@
 
             <h3>A Game About Slugs</h3>
             <p>
-              For Slugs I wanted players to have a legit sense of agency in
-              how they progress. That's why you can water whatever you want
-              first.
+              For Slugs, I wanted players to have a real sense of agency in how
+              they play the game. That's why you can go wherever and water
+              whatever you'd like first.
+            </p>
+            <p>
+              When watering a plant, the player gets presented with very
+              different dialogue options, and each of Tony's responses branches
+              off into unique conversation paths.
             </p>
             <figure class="chart">
               <ol class="flow flow--rows">
                 <li>
-                  <img class="flow-tony" src="./images/process/tony_start_idle-1.png" alt="" />
+                  <img
+                    class="flow-tony"
+                    src="./images/process/tony_start_idle-1.png"
+                    alt=""
+                  />
                   Meet Tony
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
@@ -837,23 +919,38 @@
                   <span class="tag">Water in any order</span>
                   <ul class="flow-plots">
                     <li>
-                      <img src="./images/process/plant-thyme-watered.webp" alt="" />
+                      <img
+                        src="./images/process/plant-thyme-watered.webp"
+                        alt=""
+                      />
                       Herbs
                     </li>
                     <li>
-                      <img src="./images/process/plant-sunflowers-watered.webp" alt="" />
+                      <img
+                        src="./images/process/plant-sunflowers-watered.webp"
+                        alt=""
+                      />
                       Flowers
                     </li>
                     <li>
-                      <img src="./images/process/plant-wildpatch-watered.webp" alt="" />
+                      <img
+                        src="./images/process/plant-wildpatch-watered.webp"
+                        alt=""
+                      />
                       Wild patch
                     </li>
                     <li>
-                      <img src="./images/process/plant-tomatoes-watered.webp" alt="" />
+                      <img
+                        src="./images/process/plant-tomatoes-watered.webp"
+                        alt=""
+                      />
                       Tomatoes
                     </li>
                     <li>
-                      <img src="./images/process/plant-seedling-watered.webp" alt="" />
+                      <img
+                        src="./images/process/plant-seedling-watered.webp"
+                        alt=""
+                      />
                       Seedling
                     </li>
                     <li>
@@ -865,17 +962,29 @@
                 <li class="flow-break" aria-hidden="true"></li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
                 <li>
-                  <img class="flow-shell" src="./images/process/shell-ready.webp" alt="" />
+                  <img
+                    class="flow-shell"
+                    src="./images/process/shell-ready.webp"
+                    alt=""
+                  />
                   The shell
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
                 <li>
-                  <img class="flow-thumb" src="./images/process/cut-kneeling-v4.webp" alt="" />
+                  <img
+                    class="flow-thumb"
+                    src="./images/process/cut-kneeling-v4.webp"
+                    alt=""
+                  />
                   Cutscenes
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
                 <li>
-                  <img class="flow-rain" src="./images/process/tony_warm_rain-1.png" alt="" />
+                  <img
+                    class="flow-rain"
+                    src="./images/process/tony_warm_rain-1.png"
+                    alt=""
+                  />
                   Rain
                 </li>
                 <li class="flow-arrow" aria-hidden="true">→</li>
@@ -886,9 +995,9 @@
               </ol>
             </figure>
             <p>
-              When the story's over you can return to the title, or stay in
-              the garden and hang out. If you stay, you can wander around in
-              the rain and click on things for flavor text.
+              When the story's over you can return to the title, or stay in the
+              garden and hang out. If you stay, you can wander around in the
+              rain and click on things for flavor text.
             </p>
           </section>
 
@@ -896,9 +1005,7 @@
 
           <section class="proc-section" id="meaning">
             <h2>What it means to me</h2>
-            <p>
-              Start writing here.
-            </p>
+            <p>Start writing here.</p>
           </section>
 
           <hr class="squiggle-divider" aria-hidden="true" />
